@@ -228,21 +228,9 @@
       z-index: 1;
     }
 
-    /* Portrait image */
+    /* Portrait image — hidden in favor of video bg */
     .hero-portrait {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 550px;
-      max-width: 60vw;
-      opacity: 0.7;
-      mix-blend-mode: screen;
-      filter: saturate(0.15) brightness(0.55);
-      mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 70%, transparent 100%);
-      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 70%, transparent 100%);
-      pointer-events: none;
-      z-index: 2;
+      display: none;
     }
 
     .hero-content {
@@ -283,9 +271,9 @@
       font-size: clamp(15px, 1.4vw, 18px);
       font-weight: 400;
       color: var(--color-text-secondary);
-      max-width: 520px;
-      line-height: 1.65;
-      margin-bottom: 36px;
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 40px;
     }
 
     .hero-ctas {
@@ -332,11 +320,12 @@
     }
 
     .hero-trust {
-      font-size: 13px;
-      color: var(--color-text-muted);
+      font-size: 14px;
+      color: var(--color-text-secondary);
       letter-spacing: 0.02em;
+      opacity: 0.7;
     }
-    .hero-trust span { margin: 0 8px; opacity: 0.4; }
+    .hero-trust span { margin: 0 10px; opacity: 0.3; }
 
     /* Hero Video Background */
     .hero-video {
@@ -349,8 +338,8 @@
       width: auto;
       height: auto;
       object-fit: cover;
-      opacity: 0.15;
-      filter: saturate(0.3) brightness(0.5);
+      opacity: 0.25;
+      filter: saturate(0.4) brightness(0.45) contrast(1.1);
       mix-blend-mode: screen;
       z-index: 0;
       pointer-events: none;
@@ -559,7 +548,7 @@
       margin-bottom: 8px;
     }
     .kpi-value {
-      font-size: 36px;
+      font-size: 32px;
       font-weight: 800;
       letter-spacing: -0.02em;
     }
