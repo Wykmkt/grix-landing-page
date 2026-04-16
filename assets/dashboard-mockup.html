@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRIX Compliance Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0b12;
+    color: #e0e0e8;
+    padding: 20px;
+    min-height: 100vh;
+  }
+
+  .dashboard {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* TOPBAR */
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #12131e;
+    border: 1px solid rgba(140,82,255,0.1);
+    border-radius: 12px;
+    padding: 10px 20px;
+  }
+  .topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .topbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #8c52ff;
+  }
+  .topbar-logo .icon { font-size: 18px; }
+  .topbar-search {
+    background: #1a1b2e;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    padding: 6px 14px;
+    color: #666;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 12px;
+    color: #8888a0;
+  }
+  .topbar-right .badge {
+    background: #8c52ff;
+    color: #fff;
+    border-radius: 50%;
+    width: 16px; height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 700;
+    position: relative;
+    top: -4px;
+    left: -4px;
+  }
+  .topbar-tab {
+    padding: 4px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .topbar-tab.active { background: rgba(140,82,255,0.15); color: #8c52ff; }
+  .topbar-avatar {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8c52ff, #c084fc);
+  }
+
+  /* GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: 280px 1fr 280px;
+    gap: 16px;
+  }
+  .card {
+    background: #12131e;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 12px;
+    padding: 18px;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  .card-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #e0e0e8;
+  }
+  .card-badge {
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-weight: 500;
+  }
+  .badge-purple { background: rgba(140,82,255,0.15); color: #8c52ff; }
+  .badge-green { background: rgba(34,197,94,0.12); color: #22c55e; }
+  .badge-amber { background: rgba(245,158,11,0.12); color: #f59e0b; }
+
+  /* KPI TABLE */
+  .kpi-table { width: 100%; }
+  .kpi-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 12px;
+  }
+  .kpi-row:last-child { border-bottom: none; }
+  .kpi-label { display: flex; align-items: center; gap: 8px; color: #c0c0d0; }
+  .kpi-icon { font-size: 14px; }
+  .kpi-values { display: flex; gap: 16px; text-align: right; }
+  .kpi-pct { color: #8c52ff; font-weight: 600; }
+  .kpi-abs { color: #666; font-size: 11px; }
+
+  /* RISK MATRIX */
+  .risk-matrix {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 2px;
+  }
+  .risk-cell {
+    aspect-ratio: 1;
+    border-radius: 3px;
+    min-height: 28px;
+  }
+  .risk-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    font-size: 9px;
+    color: #666;
+  }
+  .r-low { background: #1e1040; }
+  .r-med-low { background: #2d1860; }
+  .r-med { background: #8c52ff; opacity: 0.5; }
+  .r-med-high { background: #8c52ff; opacity: 0.7; }
+  .r-high { background: #f59e0b; opacity: 0.7; }
+  .r-critical { background: #ef4444; opacity: 0.7; }
+
+  /* BAR CHART */
+  .bar-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    height: 110px;
+    padding-top: 10px;
+  }
+  .bar-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    gap: 4px;
+  }
+  .bar {
+    width: 100%;
+    border-radius: 4px 4px 0 0;
+    min-height: 8px;
+  }
+  .bar-label { font-size: 8px; color: #666; text-align: center; }
+  .bar-purple { background: linear-gradient(180deg, #8c52ff, #5E35B1); }
+  .bar-light { background: linear-gradient(180deg, #E9E3FF, #c4b5fd); opacity: 0.5; }
+
+  /* LINE CHART (CSS) */
+  .line-chart-area {
+    height: 100px;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    border-left: 1px solid rgba(255,255,255,0.06);
+    margin-top: 8px;
+  }
+  .line-chart-area svg { width: 100%; height: 100%; }
+
+  /* DATA CLASSIFICATION */
+  .class-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .class-item {
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .class-public { background: rgba(140,82,255,0.15); color: #a87aff; }
+  .class-internal { background: rgba(99,102,241,0.1); color: #818cf8; }
+  .class-confidential { background: rgba(168,122,255,0.12); color: #c4b5fd; }
+  .class-restricted { background: rgba(239,68,68,0.1); color: #f87171; }
+
+  /* DONUT CHART */
+  .donut-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 12px;
+  }
+  .donut-chart {
+    width: 100px; height: 100px;
+    position: relative;
+  }
+  .donut-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 10px;
+    color: #999;
+  }
+  .legend-dot {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    margin-right: 4px;
+  }
+
+  /* Y-AXIS labels */
+  .chart-y { font-size: 9px; color: #555; display: flex; flex-direction: column; justify-content: space-between; height: 100%; padding-right: 4px; }
+
+  /* BOTTOM ROW */
+  .bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* Ambient glow */
+  .dashboard::before {
+    content: '';
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(140,82,255,0.06) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .dashboard > * { position: relative; z-index: 1; }
+</style>
+</head>
+<body>
+<div class="dashboard">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="topbar-logo">
+        <span class="icon">🛡️</span>
+        <span>GRIX</span>
+        <span style="font-weight:400;color:#666;font-size:11px;margin-left:2px">COMPLIANCE</span>
+      </div>
+      <div class="topbar-search">🔍 LGPD</div>
+    </div>
+    <div class="topbar-right">
+      <span>🔔<span class="badge">3</span></span>
+      <span>⚡<span class="badge">8</span></span>
+      <span class="topbar-tab active">📊 Monitoramento</span>
+      <span class="topbar-tab">🛡️ Conformidade</span>
+      <span class="topbar-tab">⚙️ Configurações</span>
+      <div class="topbar-avatar"></div>
+    </div>
+  </div>
+
+  <!-- MAIN GRID -->
+  <div class="grid">
+
+    <!-- LEFT: KPIs + Bar Chart -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">📊 KPIs de Conformidade</span>
+          <span class="card-badge badge-purple">Em Conformidade</span>
+        </div>
+        <div class="kpi-table">
+          <div class="kpi-row">
+            <span class="kpi-label"><span class="kpi-icon">🛡️</span> LGPD Compliance</span>
+            <div class="kpi-values"><span class="kpi-pct">94%</span><span class="kpi-abs">12.847</span></div>
+          </div>
+          <div class="kpi-row">
+            <span class="kpi-label"><span class="kpi-icon">📋</span> Dados Mapeados</span>
+            <div class="kpi-values"><span class="kpi-pct">87%</span><span class="kpi-abs">10.234</span></div>
+          </div>
+          <div class="kpi-row">
+            <span class="kpi-label"><span class="kpi-icon">✅</span> Controles Ativos</span>
+            <div class="kpi-values"><span class="kpi-pct">91%</span><span class="kpi-abs">$216k</span></div>
+          </div>
+          <div class="kpi-row">
+            <span class="kpi-label"><span class="kpi-icon">⚠️</span> Riscos Pendentes</span>
+            <div class="kpi-values"><span class="kpi-pct" style="color:#f59e0b">12</span><span class="kpi-abs">$398k</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Aderência por Categoria</span>
+          <span class="card-badge badge-green">Em Evolução</span>
+        </div>
+        <div class="bar-chart">
+          <div class="bar-group"><div class="bar bar-purple" style="height:85%"></div><div class="bar-label">Consen-<br>timento</div></div>
+          <div class="bar-group"><div class="bar bar-purple" style="height:70%"></div><div class="bar-label">Políticas</div></div>
+          <div class="bar-group"><div class="bar bar-purple" style="height:55%"></div><div class="bar-label">Mapea-<br>mento</div></div>
+          <div class="bar-group"><div class="bar bar-purple" style="height:92%"></div><div class="bar-label">Controles</div></div>
+          <div class="bar-group"><div class="bar bar-light" style="height:40%"></div><div class="bar-label">Setores</div></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:9px;color:#555;">
+          <span>0%</span><span>50%</span><span>100%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CENTER: Risk Matrix + Privacy Assessment -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Matriz de Risco Regulatório — LGPD</span>
+          <div style="display:flex;gap:6px;">
+            <span class="card-badge badge-amber">Categorias</span>
+            <span class="card-badge badge-purple">Fontes</span>
+          </div>
+        </div>
+        <div style="font-size:10px;color:#666;margin-bottom:8px;">Probabilidade × Impacto</div>
+        <div class="risk-matrix">
+          <!-- Row 1 (top = high impact) -->
+          <div class="risk-cell r-critical"></div><div class="risk-cell r-critical"></div><div class="risk-cell r-high"></div><div class="risk-cell r-high"></div><div class="risk-cell r-med-high"></div><div class="risk-cell r-med-high"></div><div class="risk-cell r-med"></div><div class="risk-cell r-med"></div><div class="risk-cell r-med-low"></div><div class="risk-cell r-low"></div>
+          <!-- Row 2 -->
+          <div class="risk-cell r-critical"></div><div class="risk-cell r-high"></div><div class="risk-cell r-high"></div><div class="risk-cell r-med-high"></div><div class="risk-cell r-med-high"></div><div class="risk-cell r-med"></div><div class="risk-cell r-med"></div><div class="risk-cell r-med-low"></div><div class="risk-cell r-low"></div><div class="risk-cell r-low"></div>
+          <!-- Row 3 -->
+          <div class="risk-cell r-high"></div><div class="risk-cell r-high"></div><div class="risk-cell r-med-high"></div><div class="risk-cell r-med-high"></div><div class="risk-cell r-med"></div><div class="risk-cell r-med"></div><div class="risk-cell r-med-low"></div><div class="risk-cell r-med-low"></div><div class="risk-cell r-low"></div><div class="risk-cell r-low"></div>
+          <!-- Row 4 -->
+          <div class="risk-cell r-high"></div><div class="risk-cell r-med-high"></div><div class="risk-cell r-med-high"></div><div class="risk-cell r-med"></div><div class="risk-cell r-med"></div><div class="risk-cell r-med-low"></div><div class="risk-cell r-med-low"></div><div class="risk-cell r-low"></div><div class="risk-cell r-low"></div><div class="risk-cell r-low"></div>
+          <!-- Row 5 -->
+          <div class="risk-cell r-med-high"></div><div class="risk-cell r-med"></div><div class="risk-cell r-med"></div><div class="risk-cell r-med"></div><div class="risk-cell r-med-low"></div><div class="risk-cell r-med-low"></div><div class="risk-cell r-low"></div><div class="risk-cell r-low"></div><div class="risk-cell r-low"></div><div class="risk-cell r-low"></div>
+          <!-- Row 6 -->
+          <div class="risk-cell r-med"></div><div class="risk-cell r-med"></div><div class="risk-cell r-med-low"></div><div class="risk-cell r-med-low"></div><div class="risk-cell r-med-low"></div><div class="risk-cell r-low"></div><div class="risk-cell r-low"></div><div class="risk-cell r-low"></div><div class="risk-cell r-low"></div><div class="risk-cell r-low"></div>
+          <!-- Row 7 -->
+          <div class="risk-cell r-med"></div><div class="risk-cell r-med-low"></div><div class="risk-cell r-med-low"></div><div class="risk-cell r-med-low"></div><div class="risk-cell r-low"></div><div class="risk-cell r-low"></div><div class="risk-cell r-low"></div><div class="risk-cell r-low"></div><div class="risk-cell r-low"></div><div class="risk-cell r-low"></div>
+        </div>
+        <div class="risk-labels">
+          <span>← Baixa Probabilidade</span>
+          <span>Alta Probabilidade →</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Avaliação de Impacto à Privacidade (RIPD)</span>
+          <span class="card-badge badge-green">Certificado</span>
+        </div>
+        <div style="position:relative;height:90px;margin-top:4px;">
+          <svg viewBox="0 0 500 90" style="width:100%;height:100%;">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#8c52ff" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#8c52ff" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <!-- Grid lines -->
+            <line x1="0" y1="22" x2="500" y2="22" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+            <line x1="0" y1="45" x2="500" y2="45" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+            <line x1="0" y1="67" x2="500" y2="67" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+            <!-- Area fill -->
+            <path d="M0,70 C30,65 60,55 100,50 C140,45 180,42 220,35 C260,28 300,30 340,25 C380,20 420,22 460,18 L500,15 L500,90 L0,90 Z" fill="url(#g1)"/>
+            <!-- Line -->
+            <path d="M0,70 C30,65 60,55 100,50 C140,45 180,42 220,35 C260,28 300,30 340,25 C380,20 420,22 460,18 L500,15" fill="none" stroke="#8c52ff" stroke-width="2"/>
+            <!-- Second line -->
+            <path d="M0,75 C30,72 60,68 100,65 C140,62 180,60 220,55 C260,50 300,48 340,45 C380,42 420,40 460,38 L500,35" fill="none" stroke="#c084fc" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <!-- Dots -->
+            <circle cx="220" cy="35" r="3" fill="#8c52ff"/>
+            <circle cx="340" cy="25" r="3" fill="#8c52ff"/>
+            <circle cx="460" cy="18" r="3" fill="#8c52ff"/>
+          </svg>
+          <div style="display:flex;justify-content:space-between;font-size:9px;color:#555;margin-top:2px;">
+            <span>Jan</span><span>Mar</span><span>Mai</span><span>Jul</span><span>Set</span><span>Nov</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Classification + Donut -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Classificação de Dados</span>
+          <span class="card-badge badge-purple">Completo</span>
+        </div>
+        <div class="class-grid">
+          <div class="class-item class-public">Público</div>
+          <div class="class-item class-internal">Interno</div>
+          <div class="class-item class-internal">Interno</div>
+          <div class="class-item class-confidential">Confidencial</div>
+          <div class="class-item class-confidential">Confidencial</div>
+          <div class="class-item class-restricted">Restrito</div>
+          <div class="class-item class-public">Público</div>
+          <div class="class-item class-restricted">Restrito</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Impacto à Privacidade</span>
+          <span class="card-badge badge-purple">Fontes</span>
+        </div>
+        <div class="donut-wrapper">
+          <div class="donut-chart">
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="38" fill="none" stroke="#1e1040" stroke-width="12"/>
+              <circle cx="50" cy="50" r="38" fill="none" stroke="#8c52ff" stroke-width="12" stroke-dasharray="75 164" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
+              <circle cx="50" cy="50" r="38" fill="none" stroke="#c084fc" stroke-width="12" stroke-dasharray="45 194" stroke-dashoffset="-75" transform="rotate(-90 50 50)"/>
+              <circle cx="50" cy="50" r="38" fill="none" stroke="#E9E3FF" stroke-width="12" stroke-dasharray="35 204" stroke-dashoffset="-120" transform="rotate(-90 50 50)"/>
+              <circle cx="50" cy="50" r="38" fill="none" stroke="#5E35B1" stroke-width="12" stroke-dasharray="25 214" stroke-dashoffset="-155" transform="rotate(-90 50 50)"/>
+              <circle cx="50" cy="50" r="38" fill="none" stroke="#3b2070" stroke-width="12" stroke-dasharray="60 179" stroke-dashoffset="-180" transform="rotate(-90 50 50)"/>
+            </svg>
+          </div>
+          <div class="donut-legend">
+            <span><span class="legend-dot" style="background:#8c52ff"></span>Identificação</span>
+            <span><span class="legend-dot" style="background:#c084fc"></span>Proteção</span>
+            <span><span class="legend-dot" style="background:#E9E3FF"></span>Conteúdo</span>
+            <span><span class="legend-dot" style="background:#5E35B1"></span>Incidentes</span>
+            <span><span class="legend-dot" style="background:#3b2070"></span>Públicos</span>
+            <span><span class="legend-dot" style="background:#1e1040"></span>Restritos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

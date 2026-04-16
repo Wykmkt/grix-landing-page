@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 550" width="1440" height="550">
+  <rect width="1440" height="550" fill="#0C0C14"/>
+
+  <!-- Header -->
+  <text x="720" y="80" text-anchor="middle" fill="#F5F5F7" font-family="Inter" font-weight="800" font-size="48" letter-spacing="-2">
+    <tspan x="720" dy="0">Soluções para quem</tspan>
+    <tspan x="720" dy="58">decide sob pressão</tspan>
+  </text>
+  <text x="720" y="170" text-anchor="middle" fill="#A1A1AA" font-family="Inter" font-size="16">A Grix se adapta à sua realidade regulatória — não o contrário.</text>
+
+  <!-- Card 1: Governança de Dados -->
+  <rect x="68" y="220" width="250" height="300" rx="16" fill="#10101C" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <rect x="68" y="220" width="250" height="130" rx="16" fill="#1A1A2E"/>
+  <text x="88" y="250" fill="#636370" font-family="Inter" font-size="11">[uc-governance.jpg]</text>
+  <text x="88" y="380" fill="#F5F5F7" font-family="Inter" font-weight="600" font-size="15">Governança de Dados</text>
+  <text x="88" y="402" fill="#A1A1AA" font-family="Inter" font-size="12">
+    <tspan x="88" dy="0">Saber o que se tem antes de</tspan>
+    <tspan x="88" dy="18">proteger. Classificação, RoPA,</tspan>
+    <tspan x="88" dy="18">matriz de risco de dados.</tspan>
+  </text>
+  <text x="88" y="470" fill="#8C52FF" font-family="Inter" font-weight="500" font-size="12">Saiba mais →</text>
+
+  <!-- Card 2: MDR com IA 24x7 -->
+  <rect x="334" y="220" width="250" height="300" rx="16" fill="#10101C" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <rect x="334" y="220" width="250" height="130" rx="16" fill="#1A1A2E"/>
+  <text x="354" y="250" fill="#636370" font-family="Inter" font-size="11">[uc-soc.jpg]</text>
+  <text x="354" y="380" fill="#F5F5F7" font-family="Inter" font-weight="600" font-size="15">MDR com IA 24x7</text>
+  <text x="354" y="402" fill="#A1A1AA" font-family="Inter" font-size="12">
+    <tspan x="354" dy="0">Ninguém dorme na sua rede.</tspan>
+    <tspan x="354" dy="18">SOC com IA agentificada,</tspan>
+    <tspan x="354" dy="18">resposta em minutos.</tspan>
+  </text>
+  <text x="354" y="470" fill="#8C52FF" font-family="Inter" font-weight="500" font-size="12">Saiba mais →</text>
+
+  <!-- Card 3: Conformidade (FEATURED) -->
+  <rect x="600" y="210" width="265" height="310" rx="16" fill="#10101C" stroke="rgba(140,82,255,0.2)" stroke-width="1"/>
+  <rect x="600" y="210" width="265" height="135" rx="16" fill="#1A1A3E"/>
+  <text x="620" y="245" fill="#636370" font-family="Inter" font-size="11">[uc-compliance.jpg]</text>
+  <text x="620" y="375" fill="#F5F5F7" font-family="Inter" font-weight="600" font-size="15">Conformidade Regulatória</text>
+  <text x="620" y="397" fill="#A1A1AA" font-family="Inter" font-size="12">
+    <tspan x="620" dy="0">Adequação à LGPD por</tspan>
+    <tspan x="620" dy="18">engenharia, não por sorte.</tspan>
+    <tspan x="620" dy="18">ISO 27001 e 27701 integradas.</tspan>
+  </text>
+  <text x="620" y="468" fill="#8C52FF" font-family="Inter" font-weight="500" font-size="12">Saiba mais →</text>
+
+  <!-- Card 4: CISO como Serviço -->
+  <rect x="881" y="220" width="250" height="300" rx="16" fill="#10101C" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <rect x="881" y="220" width="250" height="130" rx="16" fill="#1A1A2E"/>
+  <text x="901" y="250" fill="#636370" font-family="Inter" font-size="11">[uc-ciso.jpg]</text>
+  <text x="901" y="380" fill="#F5F5F7" font-family="Inter" font-weight="600" font-size="15">CISO como Serviço</text>
+  <text x="901" y="402" fill="#A1A1AA" font-family="Inter" font-size="12">
+    <tspan x="901" dy="0">A liderança técnica que traduz</tspan>
+    <tspan x="901" dy="18">o técnico em decisão de</tspan>
+    <tspan x="901" dy="18">conselho. Fracional e sob contrato.</tspan>
+  </text>
+  <text x="901" y="470" fill="#8C52FF" font-family="Inter" font-weight="500" font-size="12">Saiba mais →</text>
+
+  <!-- Card 5: DPO como Serviço -->
+  <rect x="1147" y="220" width="250" height="300" rx="16" fill="#10101C" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <rect x="1147" y="220" width="250" height="130" rx="16" fill="#1A1A2E"/>
+  <text x="1167" y="250" fill="#636370" font-family="Inter" font-size="11">[uc-dpo.jpg]</text>
+  <text x="1167" y="380" fill="#F5F5F7" font-family="Inter" font-weight="600" font-size="15">DPO como Serviço</text>
+  <text x="1167" y="402" fill="#A1A1AA" font-family="Inter" font-size="12">
+    <tspan x="1167" dy="0">O DPO que o órgão não</tspan>
+    <tspan x="1167" dy="18">consegue contratar concursado.</tspan>
+    <tspan x="1167" dy="18">Atuação real perante a ANPD.</tspan>
+  </text>
+  <text x="1167" y="470" fill="#8C52FF" font-family="Inter" font-weight="500" font-size="12">Saiba mais →</text>
+</svg>

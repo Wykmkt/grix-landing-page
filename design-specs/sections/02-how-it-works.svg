@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800" width="1440" height="800">
+  <defs>
+    <linearGradient id="numGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8C52FF" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#8C52FF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1440" height="800" fill="#06060B"/>
+
+  <!-- Header -->
+  <text x="120" y="100" fill="#F5F5F7" font-family="Inter" font-weight="800" font-size="48" letter-spacing="-2">
+    <tspan x="120" dy="0">Como a GRIX protege</tspan>
+    <tspan x="120" dy="58">sua gestão ⚙</tspan>
+  </text>
+  <text x="900" y="130" fill="#A1A1AA" font-family="Inter" font-size="16">
+    <tspan x="900" dy="0">Da vulnerabilidade à blindagem</tspan>
+    <tspan x="900" dy="28">regulatória — em 90 dias.</tspan>
+  </text>
+
+  <!-- Sidebar Card -->
+  <rect x="120" y="220" width="260" height="200" rx="16" fill="#0C0C14" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <rect x="144" y="244" width="36" height="36" rx="8" fill="rgba(140,82,255,0.06)"/>
+  <text x="155" y="268" fill="#8C52FF" font-size="16">★</text>
+  <text x="144" y="310" fill="#F5F5F7" font-family="Inter" font-weight="700" font-size="16">IA Explicável</text>
+  <circle cx="152" cy="342" r="3" fill="#8C52FF"/>
+  <text x="164" y="347" fill="#A1A1AA" font-family="Inter" font-size="14">IA Explicável</text>
+  <circle cx="152" cy="368" r="3" fill="#8C52FF"/>
+  <text x="164" y="373" fill="#A1A1AA" font-family="Inter" font-size="14">Sem caixa-preta</text>
+  <circle cx="152" cy="394" r="3" fill="#8C52FF"/>
+  <text x="164" y="399" fill="#A1A1AA" font-family="Inter" font-size="14">Score de confiança</text>
+
+  <!-- Step 1 -->
+  <text x="440" y="275" fill="url(#numGrad)" font-family="Inter" font-weight="800" font-size="56">1</text>
+  <text x="520" y="255" fill="#F5F5F7" font-family="Inter" font-weight="600" font-size="20">Diagnóstico Profundo</text>
+  <text x="520" y="283" fill="#A1A1AA" font-family="Inter" font-size="16">Mapeamento de riscos, entrevistas com stakeholders</text>
+  <text x="520" y="305" fill="#A1A1AA" font-family="Inter" font-size="16">e análise de maturidade NIST CSF — em 2 a 4 semanas.</text>
+  <line x1="440" y1="330" x2="1320" y2="330" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+  <!-- Step 2 -->
+  <text x="440" y="400" fill="url(#numGrad)" font-family="Inter" font-weight="800" font-size="56">2</text>
+  <text x="520" y="380" fill="#F5F5F7" font-family="Inter" font-weight="600" font-size="20">Mapeamento de Riscos</text>
+  <text x="520" y="408" fill="#A1A1AA" font-family="Inter" font-size="16">Identificamos correlações ocultas, exposição regulatória</text>
+  <text x="520" y="430" fill="#A1A1AA" font-family="Inter" font-size="16">e prontidão para auditorias do TCU e da ANPD.</text>
+  <line x1="440" y1="455" x2="1320" y2="455" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+  <!-- Step 3 -->
+  <text x="440" y="525" fill="url(#numGrad)" font-family="Inter" font-weight="800" font-size="56">3</text>
+  <text x="520" y="505" fill="#F5F5F7" font-family="Inter" font-weight="600" font-size="20">Implementação em 90 dias</text>
+  <text x="520" y="533" fill="#A1A1AA" font-family="Inter" font-size="16">Quick wins em 30 dias, arquitetura ISO, treinamento</text>
+  <text x="520" y="555" fill="#A1A1AA" font-family="Inter" font-size="16">interno e handoff documentado com SLA.</text>
+  <line x1="440" y1="580" x2="1320" y2="580" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+  <!-- Step 4 -->
+  <text x="440" y="650" fill="url(#numGrad)" font-family="Inter" font-weight="800" font-size="56">4</text>
+  <text x="520" y="630" fill="#F5F5F7" font-family="Inter" font-weight="600" font-size="20">Operação Contínua 24x7</text>
+  <text x="520" y="658" fill="#A1A1AA" font-family="Inter" font-size="16">SOC com IA, relatório C-level mensal, resposta imediata</text>
+  <text x="520" y="680" fill="#A1A1AA" font-family="Inter" font-size="16">a incidentes e evolução contínua.</text>
+</svg>
