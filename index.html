@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GRIX — Proteção à decisão. Blindagem à responsabilidade.</title>
-  <meta name="description" content="Cibersegurança, Governança e Compliance para gestores que respondem pelo próprio CPF. ISO 27001, 27701, 37001. Metodologia em 90 dias.">
-  <meta property="og:title" content="GRIX — Proteção à decisão. Blindagem à responsabilidade.">
-  <meta property="og:description" content="Cibersegurança, Governança e Compliance para gestores sob exposição regulatória. CISO e DPO como serviço.">
+  <title>GRIX — Proteja a decisao. Blinde sua gestao.</title>
+  <meta name="description" content="Ciberseguranca, Governanca e Compliance para gestores que respondem pelo proprio CPF. ISO 27001, 27701, 37001. Metodologia em 90 dias.">
+  <meta property="og:title" content="GRIX — Proteja a decisao. Blinde sua gestao.">
+  <meta property="og:description" content="Ciberseguranca, Governanca e Compliance para gestores sob exposicao regulatoria. CISO e DPO como servico.">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GRIX">
+  <meta name="theme-color" content="#8C52FF">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     /* ========================================
-       FOCUSLAB AI — Premium Landing Page v2
-       Palette: GRIX (#8c52ff purple)
+       GRIX — Premium Landing Page
+       Cinema-grade dark design
        ======================================== */
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      /* GRIX Palette */
       --color-bg: #06060b;
       --color-surface: #0c0c14;
       --color-elevated: #13131f;
@@ -30,748 +31,1863 @@
       --color-text: #f5f5f7;
       --color-text-secondary: #a1a1aa;
       --color-text-muted: #636370;
-      --color-accent: #8c52ff;
-      --color-accent-light: #a87aff;
-      --color-accent-hover: #9d6aff;
-      --color-accent-glow: rgba(140,82,255,0.2);
-      --color-accent-subtle: rgba(140,82,255,0.06);
-      --color-accent-bg: #E9E3FF;
-      --color-gradient-start: #8c52ff;
-      --color-gradient-end: #c084fc;
-
-      /* Typography */
-      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      --fs-display: clamp(3rem, 7vw, 5.5rem);
-      --fs-h2: clamp(1.75rem, 4vw, 3rem);
-      --fs-h3: clamp(1.15rem, 2vw, 1.4rem);
-      --fs-body: clamp(0.95rem, 1.2vw, 1.05rem);
-      --fs-small: clamp(0.8rem, 1vw, 0.875rem);
-      --fs-xs: 0.75rem;
-
-      /* Spacing */
-      --section-py: clamp(6rem, 12vw, 10rem);
-      --container: 1200px;
-      --px: clamp(1.5rem, 5vw, 2.5rem);
-      --radius-sm: 8px;
-      --radius-md: 12px;
-      --radius-lg: 16px;
-      --radius-xl: 24px;
-      --radius-full: 9999px;
-
-      /* Transitions */
-      --ease: cubic-bezier(0.16, 1, 0.3, 1);
-      --t-fast: 0.15s var(--ease);
-      --t-base: 0.3s var(--ease);
-      --t-slow: 0.5s var(--ease);
+      --color-primary: #8C52FF;
+      --color-primary-light: #A87AFF;
+      --color-primary-soft: #C084FC;
+      --color-primary-pale: #E9E3FF;
+      --color-primary-deep: #5E35B1;
+      --color-accent-blue: #3B82F6;
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --glass-bg: rgba(12,12,20,0.72);
+      --glass-border: rgba(255,255,255,0.06);
+      --nav-height: 72px;
     }
 
-    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
     body {
-      font-family: var(--font);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--color-bg);
       color: var(--color-text);
       line-height: 1.6;
       overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
     }
 
-    /* No loader - direct render */
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
 
-    /* Utilities */
-    .container { max-width: var(--container); margin: 0 auto; padding-inline: var(--px); }
-    .section { padding-block: var(--section-py); position: relative; }
-    .gradient-text { background: linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-end)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-
-    /* Buttons */
-    .btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font); font-size: var(--fs-small); font-weight: 500; padding: 0.8rem 1.75rem; border-radius: var(--radius-full); border: 1px solid transparent; cursor: pointer; text-decoration: none; transition: all var(--t-base); white-space: nowrap; letter-spacing: -0.01em; }
-    .btn-primary { background: var(--color-accent); color: #fff; border-color: var(--color-accent); }
-    .btn-primary:hover { background: var(--color-accent-hover); box-shadow: 0 0 40px var(--color-accent-glow), 0 4px 15px rgba(140,82,255,0.3); transform: translateY(-2px); }
-    .btn-outline { background: transparent; color: var(--color-text); border-color: rgba(255,255,255,0.12); }
-    .btn-outline:hover { border-color: rgba(140,82,255,0.4); background: rgba(140,82,255,0.05); transform: translateY(-2px); }
-    .btn-icon { width: 38px; height: 38px; border-radius: 50%; background: var(--color-accent); display: inline-flex; align-items: center; justify-content: center; border: none; cursor: pointer; transition: all var(--t-base); flex-shrink: 0; }
-    .btn-icon:hover { box-shadow: 0 0 24px var(--color-accent-glow); transform: scale(1.1); }
-    .btn-icon svg { width: 15px; height: 15px; fill: none; stroke: #fff; stroke-width: 2.5; }
-
-    /* ===== NAVBAR ===== */
-    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.1rem 0; transition: all var(--t-base); }
-    .nav.scrolled { background: rgba(6,6,11,0.8); backdrop-filter: blur(24px) saturate(1.4); -webkit-backdrop-filter: blur(24px) saturate(1.4); border-bottom: 1px solid var(--color-border); padding: 0.65rem 0; }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
-    .nav-logo { font-size: 0.95rem; font-weight: 600; color: var(--color-text); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; letter-spacing: -0.02em; }
-    .nav-logo-icon { color: var(--color-accent); font-size: 1rem; }
-    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
-    .nav-links a { color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem; font-weight: 400; transition: color var(--t-fast); }
-    .nav-links a:hover, .nav-links a.active { color: var(--color-text); }
-    .nav-right { display: flex; align-items: center; gap: 1rem; }
-    .nav-social { display: flex; gap: 0.6rem; align-items: center; }
-    .nav-social a { color: var(--color-text-muted); transition: color var(--t-fast); display: flex; }
-    .nav-social a:hover { color: var(--color-text-secondary); }
-    .nav-social svg { width: 17px; height: 17px; }
-    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; z-index: 1001; }
-    .nav-toggle span { display: block; width: 20px; height: 1.5px; background: var(--color-text); margin: 5px 0; transition: all var(--t-base); border-radius: 2px; }
-    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(4.5px, 4.5px); }
-    .nav-toggle.active span:nth-child(2) { opacity: 0; }
-    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
-
-    @media (max-width: 768px) {
-      .nav-toggle { display: block; }
-      .nav-menu { position: fixed; top: 0; right: -100%; width: 100%; height: 100dvh; background: rgba(6,6,11,0.97); backdrop-filter: blur(40px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; transition: right var(--t-base); }
-      .nav-menu.open { right: 0; }
-      .nav-links { flex-direction: column; gap: 1.5rem; }
-      .nav-links a { font-size: 1.1rem; }
-      .nav-right { flex-direction: column; }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
 
-    /* ===== HERO ===== */
-    .hero { min-height: 100dvh; display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 5rem; }
-    /* Dramatic backlight glow — inspired by Behance reference */
-    .hero-glow {
-      position: absolute;
-      top: 35%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 700px; height: 700px;
-      background: radial-gradient(circle, rgba(140,82,255,0.25) 0%, rgba(140,82,255,0.08) 35%, transparent 65%);
-      pointer-events: none;
-      filter: blur(40px);
-      z-index: 1;
+    /* ============ NAVBAR ============ */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      transition: background 0.4s var(--ease-out-expo), backdrop-filter 0.4s var(--ease-out-expo), border-color 0.4s;
+      border-bottom: 1px solid transparent;
     }
-    /* Rim light halo behind head */
-    .hero-glow::after {
+    .navbar.scrolled {
+      background: var(--glass-bg);
+      backdrop-filter: blur(24px) saturate(1.4);
+      -webkit-backdrop-filter: blur(24px) saturate(1.4);
+      border-bottom-color: var(--glass-border);
+    }
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .nav-logo {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--color-text);
+    }
+    .nav-logo .shield { font-size: 22px; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--color-text-secondary);
+      transition: color 0.25s;
+      position: relative;
+    }
+    .nav-links a::after {
       content: '';
       position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 350px; height: 350px;
-      background: radial-gradient(circle, rgba(140,82,255,0.35) 0%, rgba(100,60,220,0.15) 40%, transparent 70%);
-      border-radius: 50%;
-      filter: blur(30px);
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background: var(--color-primary);
+      transition: width 0.3s var(--ease-out-expo);
     }
-    /* Portrait — large, cinematic, prominent */
-    .hero-portrait {
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--color-text);
+    }
+    .nav-links a.active::after,
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    .nav-cta {
+      font-size: 13px;
+      font-weight: 500;
+      padding: 10px 22px;
+      border-radius: 100px;
+      background: var(--color-primary);
+      color: #fff;
+      transition: background 0.3s, transform 0.3s var(--ease-out-expo), box-shadow 0.3s;
+    }
+    .nav-cta:hover {
+      background: var(--color-primary-light);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(140,82,255,0.35);
+    }
+
+    /* Mobile menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      width: 24px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    .hamburger span {
+      display: block;
+      height: 2px;
+      background: var(--color-text);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(6,6,11,0.96);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 24px;
+      font-weight: 300;
+      color: var(--color-text-secondary);
+      transition: color 0.25s;
+    }
+    .mobile-menu a:hover { color: var(--color-text); }
+    .mobile-menu .nav-cta { font-size: 16px; padding: 14px 32px; }
+
+    @media (max-width: 900px) {
+      .nav-links, .nav-cta-wrap { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    /* ============ HERO ============ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: #08090d;
+    }
+
+    /* Purple glow */
+    .hero-glow {
       position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -42%);
-      width: 550px; height: 700px;
-      background-image: url('assets/hero-portrait.png');
-      background-size: cover;
-      background-position: center 20%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -55%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(ellipse at center, rgba(140,82,255,0.25) 0%, rgba(140,82,255,0.08) 40%, transparent 70%);
+      filter: blur(60px);
       pointer-events: none;
       z-index: 1;
-      opacity: 0.75;
-      mask-image: linear-gradient(180deg, transparent 0%, black 8%, black 65%, transparent 95%);
-      -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 8%, black 65%, transparent 95%);
-      filter: saturate(0.15) brightness(0.55) contrast(1.3);
-      mix-blend-mode: screen;
     }
-    /* Blue/purple ambient light overlay on face */
-    .hero-portrait::after {
+
+    /* Portrait image */
+    .hero-portrait {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 550px;
+      max-width: 60vw;
+      opacity: 0.7;
+      mix-blend-mode: screen;
+      filter: saturate(0.15) brightness(0.55);
+      mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 70%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 70%, transparent 100%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 720px;
+      padding-top: 100px;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 5.5vw, 78px);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+    }
+    .hero h1 .line1 {
+      font-weight: 300;
+      display: block;
+    }
+    .hero h1 .line2 {
+      font-weight: 800;
+      display: block;
+    }
+    .hero h1 .gear {
+      display: inline-block;
+      font-size: 0.55em;
+      margin-left: 8px;
+      animation: spin 12s linear infinite;
+      vertical-align: middle;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .hero-sub {
+      font-size: clamp(15px, 1.4vw, 18px);
+      font-weight: 400;
+      color: var(--color-text-secondary);
+      max-width: 520px;
+      line-height: 1.65;
+      margin-bottom: 36px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 30px;
+      border-radius: 100px;
+      background: var(--color-primary);
+      color: #fff;
+      transition: background 0.3s, transform 0.25s var(--ease-out-expo), box-shadow 0.3s;
+    }
+    .btn-primary:hover {
+      background: var(--color-primary-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(140,82,255,0.4);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 14px 30px;
+      border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--color-text-secondary);
+      transition: border-color 0.3s, color 0.3s, transform 0.25s var(--ease-out-expo);
+    }
+    .btn-outline:hover {
+      border-color: var(--color-primary);
+      color: var(--color-text);
+      transform: translateY(-2px);
+    }
+
+    .hero-trust {
+      font-size: 13px;
+      color: var(--color-text-muted);
+      letter-spacing: 0.02em;
+    }
+    .hero-trust span { margin: 0 8px; opacity: 0.4; }
+
+    /* ISO Badge - glassmorphism card */
+    .iso-badge {
+      position: absolute;
+      left: 40px;
+      bottom: 140px;
+      z-index: 20;
+      background: rgba(12,12,20,0.65);
+      backdrop-filter: blur(24px) saturate(1.4);
+      -webkit-backdrop-filter: blur(24px) saturate(1.4);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      animation: float 6s ease-in-out infinite;
+    }
+    .iso-badge .badge-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-deep));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .iso-badge .badge-text {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-text);
+      line-height: 1.4;
+    }
+    .iso-badge .badge-text small {
+      display: block;
+      font-weight: 400;
+      font-size: 11px;
+      color: var(--color-text-muted);
+      margin-top: 2px;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* ============ SECTION COMMON ============ */
+    section {
+      padding: 120px 0;
+      position: relative;
+    }
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--color-primary);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(28px, 3.5vw, 48px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 16px;
+      color: var(--color-text-secondary);
+      max-width: 520px;
+      line-height: 1.65;
+    }
+
+    /* ============ HOW IT WORKS ============ */
+    .how-it-works {
+      background: var(--color-bg);
+    }
+    .how-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 40px;
+      margin-bottom: 64px;
+    }
+    .how-header .section-title {
+      max-width: 480px;
+    }
+    .how-header .section-sub {
+      text-align: right;
+    }
+
+    .how-body {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 48px;
+    }
+
+    /* Sticky sidebar */
+    .how-sidebar {
+      position: sticky;
+      top: 120px;
+      align-self: start;
+    }
+    .sidebar-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(24px) saturate(1.4);
+      -webkit-backdrop-filter: blur(24px) saturate(1.4);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 28px 24px;
+    }
+    .sidebar-card h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sidebar-card h4 .ai-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(140,82,255,0.4); }
+      50% { opacity: 0.7; box-shadow: 0 0 0 8px rgba(140,82,255,0); }
+    }
+    .sidebar-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .sidebar-card li {
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .sidebar-card li .check {
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      background: rgba(140,82,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--color-primary-light);
+      flex-shrink: 0;
+    }
+
+    /* Steps */
+    .steps {
+      display: flex;
+      flex-direction: column;
+    }
+    .step {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 24px;
+      padding: 40px 0;
+      border-bottom: 1px solid var(--color-border);
+      align-items: start;
+    }
+    .step:first-child { padding-top: 0; }
+    .step:last-child { border-bottom: none; }
+    .step-number {
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--color-primary), rgba(140,82,255,0.2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      opacity: 0.7;
+    }
+    .step-content h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .step-content p {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      line-height: 1.65;
+      max-width: 420px;
+    }
+    .step-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .step-icon.blue { background: rgba(59,130,246,0.15); color: var(--color-accent-blue); }
+    .step-icon.purple { background: rgba(140,82,255,0.15); color: var(--color-primary-light); }
+
+    /* ============ COMPLIANCE DASHBOARD ============ */
+    .dashboard-section {
+      background: var(--color-surface);
+      overflow: hidden;
+    }
+    .dashboard-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .kpi-card {
+      background: var(--color-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      transition: border-color 0.3s, transform 0.3s var(--ease-out-expo);
+    }
+    .kpi-card:hover {
+      border-color: var(--color-border-hover);
+      transform: translateY(-2px);
+    }
+    .kpi-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+    .kpi-value {
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .kpi-value.green { color: #34D399; }
+    .kpi-value.yellow { color: #FBBF24; }
+    .kpi-value.red { color: #F87171; }
+    .kpi-value.purple { color: var(--color-primary-light); }
+    .kpi-sub {
+      font-size: 11px;
+      color: var(--color-text-muted);
+      margin-top: 4px;
+    }
+
+    .dashboard-charts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .chart-card {
+      background: var(--color-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      padding: 24px;
+      transition: border-color 0.3s;
+    }
+    .chart-card:hover {
+      border-color: var(--color-border-hover);
+    }
+    .chart-card h4 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: var(--color-text);
+    }
+
+    /* Risk Matrix Heatmap */
+    .risk-matrix {
+      display: grid;
+      grid-template-columns: 30px repeat(5, 1fr);
+      grid-template-rows: repeat(5, 32px) 24px;
+      gap: 3px;
+      font-size: 10px;
+    }
+    .risk-matrix .y-label {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 6px;
+      color: var(--color-text-muted);
+      font-size: 9px;
+    }
+    .risk-matrix .x-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-muted);
+      font-size: 9px;
+    }
+    .risk-cell {
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 10px;
+      color: rgba(255,255,255,0.7);
+      transition: transform 0.2s;
+    }
+    .risk-cell:hover { transform: scale(1.1); }
+    .risk-low { background: rgba(52,211,153,0.25); }
+    .risk-med { background: rgba(251,191,36,0.3); }
+    .risk-high { background: rgba(248,113,113,0.35); }
+    .risk-crit { background: rgba(239,68,68,0.5); }
+
+    /* Bar chart */
+    .bar-chart {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .bar-label {
+      font-size: 12px;
+      color: var(--color-text-secondary);
+      min-width: 100px;
+      text-align: right;
+    }
+    .bar-track {
+      flex: 1;
+      height: 24px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+    }
+    .bar-fill {
+      height: 100%;
+      border-radius: 6px;
+      background: linear-gradient(90deg, var(--color-primary-deep), var(--color-primary));
+      transition: width 1.2s var(--ease-out-expo);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    /* Data grid */
+    .data-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+    }
+    .data-cell {
+      background: rgba(255,255,255,0.03);
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+    }
+    .data-cell .type {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+    .data-cell .count {
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .data-cell .status {
+      font-size: 10px;
+      margin-top: 4px;
+    }
+    .data-cell .status.mapped { color: #34D399; }
+    .data-cell .status.partial { color: #FBBF24; }
+    .data-cell .status.pending { color: #F87171; }
+
+    /* Line chart (CSS only) */
+    .line-chart-wrap {
+      height: 120px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      gap: 2px;
+      padding-bottom: 20px;
+    }
+    .line-bar {
+      flex: 1;
+      background: linear-gradient(to top, rgba(140,82,255,0.15), rgba(140,82,255,0.4));
+      border-radius: 4px 4px 0 0;
+      position: relative;
+      transition: height 1s var(--ease-out-expo);
+    }
+    .line-bar::after {
+      content: attr(data-label);
+      position: absolute;
+      bottom: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 9px;
+      color: var(--color-text-muted);
+      white-space: nowrap;
+    }
+
+    /* Donut chart */
+    .donut-wrap {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .donut {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: conic-gradient(
+        #34D399 0% 38%,
+        #FBBF24 38% 62%,
+        var(--color-primary) 62% 85%,
+        #F87171 85% 100%
+      );
+      position: relative;
+      flex-shrink: 0;
+    }
+    .donut::after {
+      content: '';
+      position: absolute;
+      inset: 28px;
+      border-radius: 50%;
+      background: var(--color-elevated);
+    }
+    .donut-legend {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--color-text-secondary);
+    }
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    /* ============ USE CASES ============ */
+    .use-cases {
+      background: var(--color-bg);
+      overflow: hidden;
+    }
+    .use-cases-header {
+      margin-bottom: 48px;
+    }
+    .use-cases-track {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 24px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--color-primary-deep) transparent;
+    }
+    .use-cases-track::-webkit-scrollbar { height: 4px; }
+    .use-cases-track::-webkit-scrollbar-track { background: transparent; }
+    .use-cases-track::-webkit-scrollbar-thumb { background: var(--color-primary-deep); border-radius: 4px; }
+
+    .uc-card {
+      min-width: 280px;
+      max-width: 300px;
+      flex-shrink: 0;
+      scroll-snap-align: center;
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.5s var(--ease-out-expo), border-color 0.4s, box-shadow 0.4s;
+    }
+    .uc-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--color-border-hover);
+    }
+    .uc-card.featured {
+      transform: translateY(-8px);
+      border-color: rgba(140,82,255,0.35);
+      box-shadow: 0 0 40px rgba(140,82,255,0.12), 0 12px 40px rgba(0,0,0,0.3);
+    }
+    .uc-card.featured:hover {
+      transform: translateY(-12px);
+    }
+    .uc-card-img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      filter: brightness(0.88) contrast(1.05) saturate(0.85);
+    }
+    .uc-card-body {
+      padding: 24px;
+    }
+    .uc-card-body h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+    .uc-card-body p {
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .uc-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-primary-light);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.3s var(--ease-out-expo), color 0.3s;
+    }
+    .uc-link:hover {
+      gap: 10px;
+      color: var(--color-primary-soft);
+    }
+
+    /* ============ WHY CHOOSE ============ */
+    .why-choose {
+      background: var(--color-surface);
+    }
+    .why-header {
+      margin-bottom: 56px;
+    }
+    .why-header .section-title {
+      max-width: 500px;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+    }
+    .why-card {
+      background: var(--color-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: 20px;
+      padding: 36px 28px;
+      transition: border-color 0.3s, transform 0.3s var(--ease-out-expo);
+      position: relative;
+      overflow: hidden;
+    }
+    .why-card:hover {
+      border-color: var(--color-border-hover);
+      transform: translateY(-3px);
+    }
+    .why-card.accent-left::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 24px;
+      bottom: 24px;
+      width: 3px;
+      border-radius: 0 3px 3px 0;
+      background: linear-gradient(to bottom, var(--color-accent-blue), var(--color-primary));
+    }
+    .why-card .card-num {
+      font-size: 48px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--color-primary), rgba(140,82,255,0.15));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .why-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+    .why-card p {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      line-height: 1.65;
+    }
+    .why-card .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 8px;
+    }
+    .why-card .feature-list li {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .why-card .feature-list li .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      flex-shrink: 0;
+    }
+    .why-card .award-badge {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(140,82,255,0.15), rgba(140,82,255,0.05));
+      border: 2px solid rgba(140,82,255,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+    }
+    .why-card.award-card {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .why-card.award-card p {
+      max-width: 220px;
+    }
+
+    /* ============ CTA / FOUNDER ============ */
+    .founder-cta {
+      background: var(--color-bg);
+      overflow: hidden;
+    }
+    .founder-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .founder-photo-wrap {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+    }
+    .founder-photo-wrap::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 60% 50% at 50% 35%, rgba(140,82,255,0.2) 0%, transparent 70%);
-      mix-blend-mode: color;
+      background: radial-gradient(ellipse at 30% 50%, rgba(59,130,246,0.1), transparent 60%),
+                  radial-gradient(ellipse at 70% 60%, rgba(140,82,255,0.12), transparent 60%);
       pointer-events: none;
     }
-    .hero-content { text-align: center; position: relative; z-index: 3; max-width: 780px; margin: 0 auto; text-shadow: 0 2px 20px rgba(0,0,0,0.5); }
-    .hero-badge { position: absolute; left: 0; top: 50%; transform: translateY(-50%); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.25rem 1rem; max-width: 155px; text-align: center; z-index: 3; backdrop-filter: blur(12px); }
-    .hero-badge-year { font-size: var(--fs-xs); color: var(--color-accent); font-weight: 600; margin-bottom: 0.15rem; letter-spacing: 0.05em; }
-    .hero-badge-icon { font-size: 1.3rem; margin-bottom: 0.25rem; }
-    .hero-badge-title { font-size: 0.82rem; font-weight: 700; line-height: 1.25; margin-bottom: 0.4rem; }
-    .hero-badge-sub { font-size: 0.65rem; color: var(--color-text-secondary); line-height: 1.35; }
-    .hero-badge-sub strong { color: var(--color-text); }
-    @media (max-width: 1350px) { .hero-badge { position: relative; left: auto; top: auto; transform: none; margin: 0 auto 2rem; max-width: 180px; } }
-
-    .hero-title { font-size: var(--fs-display); font-weight: 300; line-height: 1.05; letter-spacing: -0.035em; margin-bottom: 1.5rem; }
-    .hero-title strong { font-weight: 800; }
-    .hero-gear { display: inline-flex; color: var(--color-text-muted); font-size: 0.45em; vertical-align: super; animation: gearSpin 10s linear infinite; opacity: 0.5; }
-    @keyframes gearSpin { to { transform: rotate(360deg); } }
-
-    .hero-sub { font-size: var(--fs-body); color: var(--color-text-secondary); max-width: 520px; margin: 0 auto 2.25rem; line-height: 1.7; }
-    .hero-sub strong { color: var(--color-text); font-weight: 500; }
-    .hero-ctas { display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
-    .hero-cta-group { display: flex; align-items: center; gap: 0.4rem; }
-    .hero-trust { font-size: var(--fs-xs); color: var(--color-text-muted); letter-spacing: 0.02em; }
-
-    /* ===== HOW IT WORKS ===== */
-    .how { background: var(--color-bg); }
-    .how-header { display: flex; justify-content: space-between; align-items: flex-end; gap: 3rem; margin-bottom: 4.5rem; flex-wrap: wrap; }
-    .how-title { font-size: var(--fs-h2); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; }
-    .how-subtitle { font-size: var(--fs-body); color: var(--color-text-secondary); max-width: 320px; line-height: 1.65; }
-    .how-grid { display: grid; grid-template-columns: 260px 1fr; gap: 3.5rem; align-items: start; }
-    .how-sidebar { position: sticky; top: 110px; }
-    .how-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.5rem; backdrop-filter: blur(8px); }
-    .how-card-icon { width: 36px; height: 36px; background: var(--color-accent-subtle); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; color: var(--color-accent); }
-    .how-card-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.85rem; }
-    .how-card-list { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
-    .how-card-list li { display: flex; align-items: center; gap: 0.5rem; font-size: var(--fs-small); color: var(--color-text-secondary); }
-    .how-card-list li::before { content: ''; width: 4px; height: 4px; background: var(--color-accent); border-radius: 50%; flex-shrink: 0; }
-    .how-steps { display: flex; flex-direction: column; }
-    .how-step { display: grid; grid-template-columns: 70px 1fr; gap: 1.75rem; padding: 2rem 0; border-bottom: 1px solid var(--color-border); align-items: start; }
-    .how-step:last-child { border-bottom: none; }
-    .how-step-num { font-size: 3.5rem; font-weight: 800; background: linear-gradient(180deg, rgba(140,82,255,0.12) 0%, transparent 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; }
-    .how-step h3 { font-size: var(--fs-h3); font-weight: 600; margin-bottom: 0.4rem; }
-    .how-step p { font-size: var(--fs-body); color: var(--color-text-secondary); line-height: 1.6; }
-    @media (max-width: 768px) { .how-grid { grid-template-columns: 1fr; } .how-sidebar { position: static; } }
-
-    /* ===== USE CASES ===== */
-    .cases { background: var(--color-surface); }
-    .cases-header { text-align: center; margin-bottom: 3rem; }
-    .cases-title { font-size: var(--fs-h2); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.6rem; }
-    .cases-sub { font-size: var(--fs-body); color: var(--color-text-secondary); }
-    .cases-grid { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: 0.5rem; }
-    .cases-grid::-webkit-scrollbar { display: none; }
-    .case-card { min-width: 250px; max-width: 265px; flex-shrink: 0; scroll-snap-align: center; background: var(--color-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; transition: all var(--t-base); }
-    .case-card.featured { border-color: var(--color-border-hover); box-shadow: 0 8px 40px rgba(140,82,255,0.08); transform: translateY(-6px); }
-    .case-card:hover { border-color: var(--color-border-hover); transform: translateY(-4px); }
-    .case-card.featured:hover { transform: translateY(-8px); }
-    .case-img { width: 100%; aspect-ratio: 16/10; background-size: cover; background-position: center; filter: brightness(0.88) contrast(1.05) saturate(0.85); transition: filter var(--t-base); }
-    .case-card:hover .case-img { filter: brightness(0.95) contrast(1.05) saturate(0.95); }
-    .case-body { padding: 1.15rem; }
-    .case-body h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.35rem; }
-    .case-body p { font-size: 0.8rem; color: var(--color-text-secondary); line-height: 1.5; margin-bottom: 0.6rem; }
-    .case-link { font-size: 0.8rem; color: var(--color-accent); text-decoration: none; font-weight: 500; transition: color var(--t-fast); }
-    .case-link:hover { color: var(--color-accent-light); }
-
-    /* ===== WHY CHOOSE ===== */
-    .why { background: var(--color-bg); }
-    .why-header { text-align: center; margin-bottom: 3.5rem; }
-    .why-title { font-size: var(--fs-h2); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.5rem; }
-    .why-sub { font-size: var(--fs-body); color: var(--color-text-secondary); }
-    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-    .why-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 2rem 1.75rem; transition: all var(--t-base); }
-    .why-card:first-child { border-left: 2.5px solid var(--color-accent); }
-    .why-card:hover { border-color: var(--color-border-hover); transform: translateY(-3px); }
-    .why-card-num { font-size: var(--fs-xs); color: var(--color-accent); font-weight: 600; letter-spacing: 0.06em; margin-bottom: 0.85rem; }
-    .why-card h3 { font-size: var(--fs-h3); font-weight: 700; margin-bottom: 0.6rem; line-height: 1.25; }
-    .why-card p { font-size: var(--fs-small); color: var(--color-text-secondary); line-height: 1.6; }
-    .why-badge { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.6rem; }
-    .why-badge .laurel { font-size: 2.5rem; }
-    .why-badge .badge-title { font-size: 1.15rem; font-weight: 800; line-height: 1.2; }
-    @media (max-width: 768px) { .why-grid { grid-template-columns: 1fr; } }
-
-    /* ===== CTA FOUNDER ===== */
-    .cta-section { background: var(--color-surface); border-top: 1px solid var(--color-border); }
-    .cta-inner { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 4rem; align-items: center; }
-    .cta-photo { width: 100%; aspect-ratio: 3/4; max-height: 480px; border-radius: var(--radius-lg); background-image: url('assets/founder.jpg'); background-size: cover; background-position: center top; filter: brightness(0.88) saturate(0.75) contrast(1.08); }
-    .cta-content h2 { font-size: var(--fs-h2); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 1.25rem; }
-    .cta-meta { margin-bottom: 0.75rem; }
-    .cta-name { font-size: 0.95rem; font-weight: 600; }
-    .cta-role { font-size: var(--fs-small); color: var(--color-text-muted); }
-    .cta-quote { font-size: var(--fs-body); color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 2rem; font-style: italic; }
-    .cta-buttons { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-    @media (max-width: 768px) { .cta-inner { grid-template-columns: 1fr; gap: 2rem; } }
-
-    /* ===== FOOTER ===== */
-    .footer { background: var(--color-surface); padding: 4.5rem 0 2rem; border-top: 1px solid var(--color-border); }
-    .footer-grid { display: grid; grid-template-columns: 1.5fr repeat(3, 1fr) auto; gap: 2.5rem; margin-bottom: 3rem; }
-    .footer-brand .nav-logo { margin-bottom: 1.25rem; }
-    .footer-legal { display: flex; flex-direction: column; gap: 0.35rem; }
-    .footer-legal a, .footer-legal span { font-size: var(--fs-xs); color: var(--color-text-muted); text-decoration: none; transition: color var(--t-fast); }
-    .footer-legal a:hover { color: var(--color-text-secondary); }
-    .footer-col h4 { font-size: var(--fs-small); font-weight: 600; margin-bottom: 0.85rem; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
-    .footer-col a { font-size: 0.8rem; color: var(--color-text-muted); text-decoration: none; transition: color var(--t-fast); }
-    .footer-col a:hover { color: var(--color-text-secondary); }
-    .footer-actions { display: flex; flex-direction: column; gap: 0.85rem; align-items: flex-end; }
-    @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; } .footer-brand, .footer-actions { grid-column: span 2; } .footer-actions { align-items: flex-start; flex-direction: row; } }
-    @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } .footer-brand, .footer-actions { grid-column: span 1; } }
-
-    /* ===== PLATFORM DASHBOARD ===== */
-    .platform { background: var(--color-bg); overflow: hidden; }
-    .platform-header { text-align: center; margin-bottom: 3rem; }
-    .platform-title { font-size: var(--fs-h2); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.5rem; }
-    .platform-sub { font-size: var(--fs-body); color: var(--color-text-secondary); }
-    .dash {
-      background: #0a0b14;
-      border: 1px solid rgba(140,82,255,0.1);
-      border-radius: var(--radius-xl);
-      padding: 20px;
-      max-width: 1100px;
-      margin: 0 auto;
-      box-shadow: 0 20px 80px rgba(140,82,255,0.08), 0 0 0 1px rgba(140,82,255,0.05);
-      position: relative;
+    .founder-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      filter: brightness(0.88) contrast(1.08) saturate(0.85);
+      border-radius: 24px;
     }
-    .dash::before {
-      content: '';
-      position: absolute;
-      top: -60px; left: 50%;
-      transform: translateX(-50%);
-      width: 500px; height: 200px;
-      background: radial-gradient(ellipse, rgba(140,82,255,0.08) 0%, transparent 70%);
-      pointer-events: none;
+    .founder-info h2 {
+      font-size: clamp(28px, 3.2vw, 44px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 24px;
     }
-    .dash-topbar {
+    .founder-meta {
+      margin-bottom: 20px;
+    }
+    .founder-name {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .founder-role {
+      font-size: 14px;
+      color: var(--color-text-muted);
+    }
+    .founder-quote {
+      font-size: 15px;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      border-left: 2px solid var(--color-primary-deep);
+      padding-left: 20px;
+      margin-bottom: 32px;
+      font-style: italic;
+    }
+    .founder-ctas {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #12131e;
-      border: 1px solid rgba(255,255,255,0.04);
-      border-radius: var(--radius-md);
-      padding: 8px 16px;
-      margin-bottom: 16px;
-      font-size: 11px;
+      gap: 14px;
+      flex-wrap: wrap;
     }
-    .dash-topbar-left { display: flex; align-items: center; gap: 10px; }
-    .dash-logo { color: var(--color-accent); font-weight: 700; font-size: 13px; display: flex; align-items: center; gap: 5px; }
-    .dash-logo-sub { color: var(--color-text-muted); font-weight: 400; font-size: 10px; }
-    .dash-search { background: #1a1b2e; border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; padding: 4px 10px; color: #555; font-size: 10px; }
-    .dash-topbar-right { display: flex; align-items: center; gap: 12px; color: var(--color-text-muted); font-size: 10px; }
-    .dash-tab { padding: 3px 10px; border-radius: 5px; font-size: 10px; font-weight: 500; }
-    .dash-tab.active { background: rgba(140,82,255,0.12); color: var(--color-accent); }
-    .dash-notif { background: var(--color-accent); color: #fff; border-radius: 50%; width: 14px; height: 14px; display: inline-flex; align-items: center; justify-content: center; font-size: 8px; font-weight: 700; vertical-align: super; margin-left: -3px; }
-    .dash-avatar { width: 24px; height: 24px; border-radius: 50%; background: linear-gradient(135deg, #8c52ff, #c084fc); }
 
-    .dash-grid {
+    /* ============ FOOTER ============ */
+    .footer {
+      background: var(--color-surface);
+      padding: 64px 0 32px;
+      border-top: 1px solid var(--color-border);
+    }
+    .footer-grid {
       display: grid;
-      grid-template-columns: 240px 1fr 240px;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand .nav-logo {
+      margin-bottom: 16px;
+    }
+    .footer-brand p {
+      font-size: 13px;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      max-width: 260px;
+    }
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text);
+      margin-bottom: 20px;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
       gap: 12px;
     }
-    .dash-card {
-      background: #12131e;
-      border: 1px solid rgba(255,255,255,0.04);
-      border-radius: var(--radius-md);
-      padding: 14px;
+    .footer-col a {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      transition: color 0.25s;
     }
-    .dash-card-header {
+    .footer-col a:hover {
+      color: var(--color-text);
+    }
+    .footer-bottom {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin-bottom: 10px;
+      justify-content: space-between;
+      padding-top: 24px;
+      border-top: 1px solid var(--color-border);
     }
-    .dash-card-title { font-size: 11px; font-weight: 600; }
-    .dash-badge { font-size: 9px; padding: 2px 8px; border-radius: 5px; font-weight: 500; }
-    .dash-badge-purple { background: rgba(140,82,255,0.12); color: var(--color-accent); }
-    .dash-badge-green { background: rgba(34,197,94,0.1); color: #22c55e; }
-    .dash-badge-amber { background: rgba(245,158,11,0.1); color: #f59e0b; }
+    .footer-copy {
+      font-size: 13px;
+      color: var(--color-text-muted);
+    }
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .footer-social a {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: var(--color-text-muted);
+      transition: border-color 0.3s, color 0.3s, background 0.3s;
+    }
+    .footer-social a:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary-light);
+      background: rgba(140,82,255,0.08);
+    }
+    .footer-cta-btn {
+      font-size: 13px;
+      font-weight: 500;
+      padding: 10px 22px;
+      border-radius: 100px;
+      background: var(--color-primary);
+      color: #fff;
+      transition: background 0.3s, transform 0.25s var(--ease-out-expo);
+    }
+    .footer-cta-btn:hover {
+      background: var(--color-primary-light);
+      transform: translateY(-1px);
+    }
 
-    .dash-kpi { display: flex; align-items: center; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.03); font-size: 11px; }
-    .dash-kpi:last-child { border-bottom: none; }
-    .dash-kpi-label { color: #aaa; display: flex; align-items: center; gap: 6px; }
-    .dash-kpi-val { color: var(--color-accent); font-weight: 600; }
-    .dash-kpi-abs { color: #555; font-size: 10px; margin-left: 10px; }
-
-    .dash-risk-grid { display: grid; grid-template-columns: repeat(10, 1fr); gap: 2px; }
-    .dash-rc { aspect-ratio: 1; border-radius: 2px; min-height: 20px; }
-    .rc1 { background: #140c30; } .rc2 { background: #241450; }
-    .rc3 { background: rgba(140,82,255,0.35); } .rc4 { background: rgba(140,82,255,0.55); }
-    .rc5 { background: rgba(245,158,11,0.55); } .rc6 { background: rgba(239,68,68,0.55); }
-
-    .dash-bars { display: flex; align-items: flex-end; gap: 8px; height: 80px; margin-top: 8px; }
-    .dash-bar-g { display: flex; flex-direction: column; align-items: center; flex: 1; gap: 3px; }
-    .dash-bar { width: 100%; border-radius: 3px 3px 0 0; }
-    .dash-bar-p { background: linear-gradient(180deg, #8c52ff, #5E35B1); }
-    .dash-bar-l { background: linear-gradient(180deg, #E9E3FF, #c4b5fd); opacity: 0.4; }
-    .dash-bar-label { font-size: 7px; color: #555; text-align: center; }
-
-    .dash-class-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
-    .dash-class { padding: 7px; border-radius: 6px; text-align: center; font-size: 10px; font-weight: 500; border: 1px solid rgba(255,255,255,0.04); }
-    .dc-pub { background: rgba(140,82,255,0.12); color: #a87aff; }
-    .dc-int { background: rgba(99,102,241,0.08); color: #818cf8; }
-    .dc-conf { background: rgba(168,122,255,0.1); color: #c4b5fd; }
-    .dc-rest { background: rgba(239,68,68,0.08); color: #f87171; }
-
-    .dash-donut-wrap { display: flex; align-items: center; gap: 12px; margin-top: 8px; }
-    .dash-donut { width: 70px; height: 70px; }
-    .dash-legend { display: flex; flex-direction: column; gap: 3px; font-size: 9px; color: #888; }
-    .dash-legend-dot { display: inline-block; width: 5px; height: 5px; border-radius: 50%; margin-right: 3px; }
-
-    .dash-chart { height: 70px; margin-top: 6px; }
-    .dash-chart svg { width: 100%; height: 100%; }
-    .dash-chart-labels { display: flex; justify-content: space-between; font-size: 8px; color: #444; margin-top: 2px; }
-    .dash-risk-labels { display: flex; justify-content: space-between; font-size: 8px; color: #444; margin-top: 4px; }
-
+    /* ============ RESPONSIVE ============ */
     @media (max-width: 900px) {
-      .dash-grid { grid-template-columns: 1fr; }
-      .dash { padding: 12px; }
+      .how-header { flex-direction: column; align-items: flex-start; }
+      .how-header .section-sub { text-align: left; }
+      .how-body { grid-template-columns: 1fr; }
+      .how-sidebar { position: static; }
+      .dashboard-grid { grid-template-columns: 1fr 1fr; }
+      .dashboard-charts { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .founder-grid { grid-template-columns: 1fr; }
+      .founder-photo-wrap { max-width: 400px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .iso-badge { left: 20px; bottom: 100px; }
     }
 
-    /* Reduced Motion */
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-      html { scroll-behavior: auto; }
+    @media (max-width: 640px) {
+      section { padding: 80px 0; }
+      .hero-content { padding-top: 80px; }
+      .dashboard-grid { grid-template-columns: 1fr; }
+      .data-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+      .iso-badge { display: none; }
+      .hero-portrait { max-width: 80vw; opacity: 0.4; }
+      .step { grid-template-columns: 50px 1fr; gap: 16px; }
+      .step-number { font-size: 40px; }
+    }
+
+    /* ============ ANIMATIONS (GSAP-enhanced) ============ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-32px);
+    }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(32px);
+    }
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    /* Fallback for no-JS */
+    .no-js .reveal,
+    .no-js .reveal-left,
+    .no-js .reveal-right,
+    .no-js .reveal-scale {
+      opacity: 1;
+      transform: none;
     }
   </style>
 </head>
 <body>
-
-  <!-- loader removed for reliability -->
-
-  <!-- NAV -->
-  <nav class="nav" id="nav">
-    <div class="container nav-inner">
-      <a href="#" class="nav-logo"><span class="nav-logo-icon">🛡️</span> GRIX</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
-      <div class="nav-menu" id="navMenu">
-        <ul class="nav-links">
-          <li><a href="#hero" class="active">Produto</a></li>
-          <li><a href="#how">Como funciona</a></li>
-          <li><a href="#cases">Soluções</a></li>
-          <li><a href="#platform">Plataforma</a></li>
-          <li><a href="#contact">Contato</a></li>
-        </ul>
-        <div class="nav-right">
-          <div class="nav-social">
-            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
-            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 2 .2 2.5.4a4.2 4.2 0 0 1 2 2c.2.5.3 1.3.4 2.5.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 2-.4 2.5a4.2 4.2 0 0 1-2 2c-.5.2-1.3.3-2.5.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-2-.2-2.5-.4a4.2 4.2 0 0 1-2-2c-.2-.5-.3-1.3-.4-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-2 .4-2.5a4.2 4.2 0 0 1 2-2c.5-.2 1.3-.3 2.5-.4C8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 5.8.1 4.9.3 4.1.6a6.4 6.4 0 0 0-2.3 1.5A6.4 6.4 0 0 0 .3 4.4C.1 5.2 0 6.1 0 7.4 0 8.6 0 9 0 12.3s0 3.7.1 4.9c0 1.3.2 2.2.5 3a6.4 6.4 0 0 0 1.5 2.3 6.4 6.4 0 0 0 2.3 1.5c.8.3 1.7.4 3 .5 1.2 0 1.6.1 4.9.1s3.7 0 4.9-.1c1.3 0 2.2-.2 3-.5a6.4 6.4 0 0 0 2.3-1.5 6.4 6.4 0 0 0 1.5-2.3c.3-.8.4-1.7.5-3 0-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c0-1.3-.2-2.2-.5-3a6.4 6.4 0 0 0-1.5-2.3A6.4 6.4 0 0 0 19.6.3C18.8.1 17.9 0 16.6 0 15.4 0 15 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-10.4a1.4 1.4 0 1 0 0-2.8 1.4 1.4 0 0 0 0 2.8z"/></svg></a>
-          </div>
-          <a href="#contact" class="btn btn-outline" style="font-size:0.78rem; padding:0.5rem 1.2rem;">Agendar diagnóstico</a>
-        </div>
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo">
+        <span class="shield">&#x1f6e1;&#xfe0f;</span> GRIX
+      </a>
+      <ul class="nav-links">
+        <li><a href="#produto" data-nav>Produto</a></li>
+        <li><a href="#como-funciona" data-nav>Como funciona</a></li>
+        <li><a href="#solucoes" data-nav>Solu&ccedil;&otilde;es</a></li>
+        <li><a href="#plataforma" data-nav>Plataforma</a></li>
+        <li><a href="#contato" data-nav>Contato</a></li>
+      </ul>
+      <div class="nav-cta-wrap">
+        <a href="#contato" class="nav-cta">Agendar diagn&oacute;stico</a>
+      </div>
+      <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+        <span></span><span></span><span></span>
       </div>
     </div>
   </nav>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero section" id="hero">
-      <div class="hero-glow"></div>
-      <div class="hero-portrait" aria-hidden="true"></div>
-      <div class="container" style="position:relative;">
-        <div class="hero-badge anim-in">
-          <div class="hero-badge-year">2025</div>
-          <div class="hero-badge-icon">🛡️</div>
-          <div class="hero-badge-title">ISO 27001<br>27701 · 37001</div>
-          <div class="hero-badge-sub">Certificações próprias em<br><strong>Segurança, Privacidade<br>e Antissuborno</strong></div>
-        </div>
-        <div class="hero-content">
-          <h1 class="hero-title anim-in">Proteja a decisão. <span class="hero-gear">⚙</span><br><strong>Blinde sua gestão.</strong></h1>
-          <p class="hero-sub anim-in">Cibersegurança, Governança e Compliance para gestores que<br><strong>respondem pelo próprio CPF</strong> — com metodologia em 90 dias.</p>
-          <div class="hero-ctas anim-in">
-            <div class="hero-cta-group">
-              <a href="#contact" class="btn btn-primary">Diagnóstico executivo</a>
-              <button class="btn-icon" aria-label="Diagnóstico"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            </div>
-            <a href="#how" class="btn btn-outline">Como funciona</a>
-          </div>
-          <p class="hero-trust anim-in">15+ anos protegendo decisões · 50+ projetos entregues · 3 certificações ISO</p>
-        </div>
-      </div>
-    </section>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#produto" data-mobile-nav>Produto</a>
+    <a href="#como-funciona" data-mobile-nav>Como funciona</a>
+    <a href="#solucoes" data-mobile-nav>Solu&ccedil;&otilde;es</a>
+    <a href="#plataforma" data-mobile-nav>Plataforma</a>
+    <a href="#contato" data-mobile-nav>Contato</a>
+    <a href="#contato" class="nav-cta" data-mobile-nav>Agendar diagn&oacute;stico</a>
+  </div>
 
-    <!-- HOW IT WORKS -->
-    <section class="how section" id="how">
-      <div class="container">
-        <div class="how-header">
-          <h2 class="how-title anim-in">Como a GRIX protege<br>sua gestão <span class="hero-gear" style="font-size:0.55em">⚙</span></h2>
-          <p class="how-subtitle anim-in">Da vulnerabilidade à blindagem<br>regulatória — em 90 dias.</p>
-        </div>
-        <div class="how-grid">
-          <div class="how-sidebar anim-in">
-            <div class="how-card">
-              <div class="how-card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-              <h3 class="how-card-title">IA Explicável</h3>
-              <ul class="how-card-list"><li>IA Explicável</li><li>Sem caixa-preta</li><li>Score de confiança</li></ul>
-            </div>
-          </div>
-          <div class="how-steps">
-            <div class="how-step anim-in"><div class="how-step-num">1</div><div><h3>Diagnóstico Profundo</h3><p>Mapeamento de riscos, entrevistas com stakeholders e análise de maturidade NIST CSF — em 2 a 4 semanas.</p></div></div>
-            <div class="how-step anim-in"><div class="how-step-num">2</div><div><h3>Mapeamento de Riscos</h3><p>Identificamos correlações ocultas, exposição regulatória e prontidão para auditorias do TCU e da ANPD.</p></div></div>
-            <div class="how-step anim-in"><div class="how-step-num">3</div><div><h3>Implementação em 90 dias</h3><p>Quick wins em 30 dias, arquitetura ISO, treinamento interno e handoff documentado com SLA.</p></div></div>
-            <div class="how-step anim-in"><div class="how-step-num">4</div><div><h3>Operação Contínua 24x7</h3><p>SOC com IA, relatório C-level mensal, resposta imediata a incidentes e evolução contínua.</p></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="produto">
+    <div class="hero-glow"></div>
+    <img src="assets/hero-portrait.png" alt="" class="hero-portrait" loading="eager">
 
-    <!-- PLATFORM DASHBOARD -->
-    <section class="platform section" id="platform">
-      <div class="container">
-        <div class="platform-header">
-          <h2 class="platform-title anim-in">A plataforma em <span class="gradient-text">ação</span></h2>
-          <p class="platform-sub anim-in">Compliance, risco e governança em tempo real — numa única interface.</p>
+    <!-- ISO Badge -->
+    <div class="iso-badge reveal-left">
+      <div class="badge-icon">&#x1f6e1;&#xfe0f;</div>
+      <div class="badge-text">
+        ISO 27001 / 27701 &middot; 37001
+        <small>Certificado e auditado</small>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="hero-content">
+        <h1>
+          <span class="line1 reveal">Proteja a decis&atilde;o. <span class="gear">&#x2699;</span></span>
+          <span class="line2 reveal">Blinde sua gest&atilde;o.</span>
+        </h1>
+        <p class="hero-sub reveal">
+          Ciberseguran&ccedil;a, Governan&ccedil;a e Compliance para gestores que respondem pelo pr&oacute;prio CPF &mdash; com metodologia em 90 dias.
+        </p>
+        <div class="hero-ctas reveal">
+          <a href="#contato" class="btn-primary">Diagn&oacute;stico executivo</a>
+          <a href="#como-funciona" class="btn-outline">Como funciona</a>
         </div>
-        <div class="dash anim-in">
-          <!-- Topbar -->
-          <div class="dash-topbar">
-            <div class="dash-topbar-left">
-              <div class="dash-logo">🛡️ GRIX <span class="dash-logo-sub">COMPLIANCE</span></div>
-              <div class="dash-search">🔍 LGPD</div>
-            </div>
-            <div class="dash-topbar-right">
-              <span>🔔<span class="dash-notif">3</span></span>
-              <span>⚡<span class="dash-notif">8</span></span>
-              <span class="dash-tab active">📊 Monitoramento</span>
-              <span class="dash-tab">🛡️ Conformidade</span>
-              <span class="dash-tab">⚙️ Configurações</span>
-              <div class="dash-avatar"></div>
+        <p class="hero-trust reveal">
+          15+ anos protegendo decis&otilde;es<span>&middot;</span>50+ projetos entregues<span>&middot;</span>3 certifica&ccedil;&otilde;es ISO
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="how-it-works" id="como-funciona">
+    <div class="container">
+      <div class="how-header">
+        <div>
+          <p class="section-label reveal">Metodologia</p>
+          <h2 class="section-title reveal">Como a GRIX protege<br>sua gest&atilde;o</h2>
+        </div>
+        <p class="section-sub reveal-right">
+          Da an&aacute;lise ao monitoramento cont&iacute;nuo, cada etapa &eacute; guiada por IA Explic&aacute;vel e valida&ccedil;&atilde;o humana.
+        </p>
+      </div>
+
+      <div class="how-body">
+        <!-- Sidebar -->
+        <div class="how-sidebar">
+          <div class="sidebar-card reveal-left">
+            <h4><span class="ai-dot"></span> IA Explic&aacute;vel</h4>
+            <ul>
+              <li><span class="check">&#10003;</span> IA Explic&aacute;vel</li>
+              <li><span class="check">&#10003;</span> Sem caixa-preta</li>
+              <li><span class="check">&#10003;</span> Score de confian&ccedil;a</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Steps -->
+        <div class="steps">
+          <div class="step reveal">
+            <div class="step-number">01</div>
+            <div class="step-content">
+              <h3><span class="step-icon blue">&#x1f446;</span> Diagn&oacute;stico Profundo</h3>
+              <p>Mapeamento completo do ambiente regulat&oacute;rio, t&eacute;cnico e organizacional. Identificamos gaps cr&iacute;ticos e prioridades imediatas.</p>
             </div>
           </div>
-          <!-- Grid -->
-          <div class="dash-grid">
-            <!-- LEFT -->
-            <div style="display:flex;flex-direction:column;gap:12px;">
-              <div class="dash-card">
-                <div class="dash-card-header"><span class="dash-card-title">📊 KPIs de Conformidade</span><span class="dash-badge dash-badge-purple">Em Conformidade</span></div>
-                <div class="dash-kpi"><span class="dash-kpi-label">🛡️ LGPD Compliance</span><span><span class="dash-kpi-val">94%</span><span class="dash-kpi-abs">12.847</span></span></div>
-                <div class="dash-kpi"><span class="dash-kpi-label">📋 Dados Mapeados</span><span><span class="dash-kpi-val">87%</span><span class="dash-kpi-abs">10.234</span></span></div>
-                <div class="dash-kpi"><span class="dash-kpi-label">✅ Controles Ativos</span><span><span class="dash-kpi-val">91%</span><span class="dash-kpi-abs">$216k</span></span></div>
-                <div class="dash-kpi"><span class="dash-kpi-label">⚠️ Riscos Pendentes</span><span><span class="dash-kpi-val" style="color:#f59e0b">12</span><span class="dash-kpi-abs">$398k</span></span></div>
-              </div>
-              <div class="dash-card">
-                <div class="dash-card-header"><span class="dash-card-title">Aderência por Categoria</span><span class="dash-badge dash-badge-green">Em Evolução</span></div>
-                <div class="dash-bars">
-                  <div class="dash-bar-g"><div class="dash-bar dash-bar-p" style="height:85%"></div><div class="dash-bar-label">Consen-<br>timento</div></div>
-                  <div class="dash-bar-g"><div class="dash-bar dash-bar-p" style="height:70%"></div><div class="dash-bar-label">Políticas</div></div>
-                  <div class="dash-bar-g"><div class="dash-bar dash-bar-p" style="height:55%"></div><div class="dash-bar-label">Mapea-<br>mento</div></div>
-                  <div class="dash-bar-g"><div class="dash-bar dash-bar-p" style="height:92%"></div><div class="dash-bar-label">Controles</div></div>
-                  <div class="dash-bar-g"><div class="dash-bar dash-bar-l" style="height:40%"></div><div class="dash-bar-label">Setores</div></div>
-                </div>
-              </div>
+          <div class="step reveal">
+            <div class="step-number">02</div>
+            <div class="step-content">
+              <h3><span class="step-icon purple">&#x1f50d;</span> Mapeamento de Riscos</h3>
+              <p>Classifica&ccedil;&atilde;o de riscos por impacto e probabilidade com score de confian&ccedil;a da IA. Cada recomenda&ccedil;&atilde;o &eacute; justificada.</p>
             </div>
-            <!-- CENTER -->
-            <div style="display:flex;flex-direction:column;gap:12px;">
-              <div class="dash-card">
-                <div class="dash-card-header">
-                  <span class="dash-card-title">Matriz de Risco Regulatório — LGPD</span>
-                  <div style="display:flex;gap:4px;"><span class="dash-badge dash-badge-amber">Categorias</span><span class="dash-badge dash-badge-purple">Fontes</span></div>
-                </div>
-                <div style="font-size:9px;color:#555;margin-bottom:6px;">Probabilidade × Impacto</div>
-                <div class="dash-risk-grid">
-                  <div class="dash-rc rc6"></div><div class="dash-rc rc6"></div><div class="dash-rc rc5"></div><div class="dash-rc rc5"></div><div class="dash-rc rc4"></div><div class="dash-rc rc4"></div><div class="dash-rc rc3"></div><div class="dash-rc rc3"></div><div class="dash-rc rc2"></div><div class="dash-rc rc1"></div>
-                  <div class="dash-rc rc6"></div><div class="dash-rc rc5"></div><div class="dash-rc rc5"></div><div class="dash-rc rc4"></div><div class="dash-rc rc4"></div><div class="dash-rc rc3"></div><div class="dash-rc rc3"></div><div class="dash-rc rc2"></div><div class="dash-rc rc1"></div><div class="dash-rc rc1"></div>
-                  <div class="dash-rc rc5"></div><div class="dash-rc rc5"></div><div class="dash-rc rc4"></div><div class="dash-rc rc4"></div><div class="dash-rc rc3"></div><div class="dash-rc rc3"></div><div class="dash-rc rc2"></div><div class="dash-rc rc2"></div><div class="dash-rc rc1"></div><div class="dash-rc rc1"></div>
-                  <div class="dash-rc rc5"></div><div class="dash-rc rc4"></div><div class="dash-rc rc4"></div><div class="dash-rc rc3"></div><div class="dash-rc rc3"></div><div class="dash-rc rc2"></div><div class="dash-rc rc2"></div><div class="dash-rc rc1"></div><div class="dash-rc rc1"></div><div class="dash-rc rc1"></div>
-                  <div class="dash-rc rc4"></div><div class="dash-rc rc3"></div><div class="dash-rc rc3"></div><div class="dash-rc rc3"></div><div class="dash-rc rc2"></div><div class="dash-rc rc2"></div><div class="dash-rc rc1"></div><div class="dash-rc rc1"></div><div class="dash-rc rc1"></div><div class="dash-rc rc1"></div>
-                  <div class="dash-rc rc3"></div><div class="dash-rc rc3"></div><div class="dash-rc rc2"></div><div class="dash-rc rc2"></div><div class="dash-rc rc2"></div><div class="dash-rc rc1"></div><div class="dash-rc rc1"></div><div class="dash-rc rc1"></div><div class="dash-rc rc1"></div><div class="dash-rc rc1"></div>
-                  <div class="dash-rc rc3"></div><div class="dash-rc rc2"></div><div class="dash-rc rc2"></div><div class="dash-rc rc2"></div><div class="dash-rc rc1"></div><div class="dash-rc rc1"></div><div class="dash-rc rc1"></div><div class="dash-rc rc1"></div><div class="dash-rc rc1"></div><div class="dash-rc rc1"></div>
-                </div>
-                <div class="dash-risk-labels"><span>← Baixa Probabilidade</span><span>Alta Probabilidade →</span></div>
-              </div>
-              <div class="dash-card">
-                <div class="dash-card-header"><span class="dash-card-title">Avaliação de Impacto à Privacidade (RIPD)</span><span class="dash-badge dash-badge-green">Certificado</span></div>
-                <div class="dash-chart">
-                  <svg viewBox="0 0 500 70">
-                    <defs><linearGradient id="gd1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8c52ff" stop-opacity="0.25"/><stop offset="100%" stop-color="#8c52ff" stop-opacity="0"/></linearGradient></defs>
-                    <line x1="0" y1="17" x2="500" y2="17" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
-                    <line x1="0" y1="35" x2="500" y2="35" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
-                    <line x1="0" y1="52" x2="500" y2="52" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
-                    <path d="M0,55 C50,50 100,42 160,38 C220,34 280,30 340,22 C400,16 450,14 500,10 L500,70 L0,70 Z" fill="url(#gd1)"/>
-                    <path d="M0,55 C50,50 100,42 160,38 C220,34 280,30 340,22 C400,16 450,14 500,10" fill="none" stroke="#8c52ff" stroke-width="1.5"/>
-                    <path d="M0,60 C50,56 100,50 160,46 C220,42 280,38 340,32 C400,28 450,26 500,22" fill="none" stroke="#c084fc" stroke-width="1" stroke-dasharray="3,2"/>
-                    <circle cx="340" cy="22" r="2.5" fill="#8c52ff"/><circle cx="500" cy="10" r="2.5" fill="#8c52ff"/>
-                  </svg>
-                </div>
-                <div class="dash-chart-labels"><span>Jan</span><span>Mar</span><span>Mai</span><span>Jul</span><span>Set</span><span>Nov</span></div>
-              </div>
+          </div>
+          <div class="step reveal">
+            <div class="step-number">03</div>
+            <div class="step-content">
+              <h3><span class="step-icon purple">&#x26a1;</span> Implementa&ccedil;&atilde;o em 90 dias</h3>
+              <p>Roadmap executivo com marcos semanais. Governan&ccedil;a, controles t&eacute;cnicos e conformidade regulat&oacute;ria implementados de forma integrada.</p>
             </div>
-            <!-- RIGHT -->
-            <div style="display:flex;flex-direction:column;gap:12px;">
-              <div class="dash-card">
-                <div class="dash-card-header"><span class="dash-card-title">Classificação de Dados</span><span class="dash-badge dash-badge-purple">Completo</span></div>
-                <div class="dash-class-grid">
-                  <div class="dash-class dc-pub">Público</div><div class="dash-class dc-int">Interno</div>
-                  <div class="dash-class dc-int">Interno</div><div class="dash-class dc-conf">Confidencial</div>
-                  <div class="dash-class dc-conf">Confidencial</div><div class="dash-class dc-rest">Restrito</div>
-                  <div class="dash-class dc-pub">Público</div><div class="dash-class dc-rest">Restrito</div>
-                </div>
-              </div>
-              <div class="dash-card">
-                <div class="dash-card-header"><span class="dash-card-title">Impacto à Privacidade</span><span class="dash-badge dash-badge-purple">Fontes</span></div>
-                <div class="dash-donut-wrap">
-                  <div class="dash-donut">
-                    <svg viewBox="0 0 100 100">
-                      <circle cx="50" cy="50" r="38" fill="none" stroke="#1e1040" stroke-width="10"/>
-                      <circle cx="50" cy="50" r="38" fill="none" stroke="#8c52ff" stroke-width="10" stroke-dasharray="75 164" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
-                      <circle cx="50" cy="50" r="38" fill="none" stroke="#c084fc" stroke-width="10" stroke-dasharray="45 194" stroke-dashoffset="-75" transform="rotate(-90 50 50)"/>
-                      <circle cx="50" cy="50" r="38" fill="none" stroke="#E9E3FF" stroke-width="10" stroke-dasharray="35 204" stroke-dashoffset="-120" transform="rotate(-90 50 50)"/>
-                      <circle cx="50" cy="50" r="38" fill="none" stroke="#5E35B1" stroke-width="10" stroke-dasharray="25 214" stroke-dashoffset="-155" transform="rotate(-90 50 50)"/>
-                    </svg>
-                  </div>
-                  <div class="dash-legend">
-                    <span><span class="dash-legend-dot" style="background:#8c52ff"></span>Identificação</span>
-                    <span><span class="dash-legend-dot" style="background:#c084fc"></span>Proteção</span>
-                    <span><span class="dash-legend-dot" style="background:#E9E3FF"></span>Conteúdo</span>
-                    <span><span class="dash-legend-dot" style="background:#5E35B1"></span>Incidentes</span>
-                    <span><span class="dash-legend-dot" style="background:#1e1040"></span>Restritos</span>
-                  </div>
-                </div>
-              </div>
+          </div>
+          <div class="step reveal">
+            <div class="step-number">04</div>
+            <div class="step-content">
+              <h3><span class="step-icon blue">&#x1f6e1;&#xfe0f;</span> Opera&ccedil;&atilde;o Cont&iacute;nua 24x7</h3>
+              <p>SOC gerenciado com MDR, monitoramento cont&iacute;nuo de conformidade e resposta a incidentes em tempo real.</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- USE CASES -->
-    <section class="cases section" id="cases">
-      <div class="container">
-        <div class="cases-header">
-          <h2 class="cases-title anim-in">Soluções para quem<br>decide sob pressão</h2>
-          <p class="cases-sub anim-in">A Grix se adapta à sua realidade regulatória — não o contrário.</p>
+  <!-- ============ COMPLIANCE DASHBOARD ============ -->
+  <section class="dashboard-section" id="plataforma">
+    <div class="container">
+      <div class="dashboard-header">
+        <p class="section-label reveal">Plataforma</p>
+        <h2 class="section-title reveal">KPIs de Conformidade</h2>
+        <p class="section-sub reveal" style="margin:0 auto;">
+          Vis&atilde;o executiva em tempo real. Dados que orientam decis&otilde;es, n&atilde;o relat&oacute;rios que acumulam poeira.
+        </p>
+      </div>
+
+      <!-- KPI Cards -->
+      <div class="dashboard-grid">
+        <div class="kpi-card reveal-scale">
+          <div class="kpi-label">LGPD</div>
+          <div class="kpi-value green">94%</div>
+          <div class="kpi-sub">Ader&ecirc;ncia geral</div>
         </div>
-        <div class="cases-grid">
-          <div class="case-card anim-in">
-            <div class="case-img" style="background-image:url('https://images.unsplash.com/photo-1563986768609-322da13575f2?w=520&h=325&fit=crop&auto=format&q=80')" role="img" aria-label="Governança e classificação de dados"></div>
-            <div class="case-body"><h3>Governança de Dados</h3><p>Saber o que se tem antes de proteger. Classificação, RoPA, matriz de risco de dados.</p><a href="#" class="case-link">Saiba mais →</a></div>
-          </div>
-          <div class="case-card anim-in">
-            <div class="case-img" style="background-image:url('assets/uc-soc.png')" role="img" aria-label="Centro de operações de segurança SOC 24x7"></div>
-            <div class="case-body"><h3>MDR com IA 24x7</h3><p>Ninguém dorme na sua rede. SOC com IA agentificada, resposta em minutos.</p><a href="#" class="case-link">Saiba mais →</a></div>
-          </div>
-          <div class="case-card featured anim-in">
-            <div class="case-img" style="background-image:url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=520&h=325&fit=crop&auto=format&q=80')" role="img" aria-label="Conformidade regulatória LGPD"></div>
-            <div class="case-body"><h3>Conformidade Regulatória</h3><p>Adequação à LGPD por engenharia, não por sorte. ISO 27001 e 27701 integradas.</p><a href="#" class="case-link">Saiba mais →</a></div>
-          </div>
-          <div class="case-card anim-in">
-            <div class="case-img" style="background-image:url('https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=520&h=325&fit=crop&auto=format&q=80')" role="img" aria-label="CISO apresentando ao conselho executivo"></div>
-            <div class="case-body"><h3>CISO como Serviço</h3><p>A liderança técnica que traduz o técnico em decisão de conselho. Fracional e sob contrato.</p><a href="#" class="case-link">Saiba mais →</a></div>
-          </div>
-          <div class="case-card anim-in">
-            <div class="case-img" style="background-image:url('https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=520&h=325&fit=crop&auto=format&q=80')" role="img" aria-label="DPO revisando documentos de privacidade"></div>
-            <div class="case-body"><h3>DPO como Serviço</h3><p>O DPO que o órgão não consegue contratar concursado. Atuação real perante a ANPD.</p><a href="#" class="case-link">Saiba mais →</a></div>
-          </div>
+        <div class="kpi-card reveal-scale">
+          <div class="kpi-label">Dados Mapeados</div>
+          <div class="kpi-value purple">87%</div>
+          <div class="kpi-sub">Do total identificado</div>
+        </div>
+        <div class="kpi-card reveal-scale">
+          <div class="kpi-label">Controles Ativos</div>
+          <div class="kpi-value green">91%</div>
+          <div class="kpi-sub">Em produ&ccedil;&atilde;o</div>
+        </div>
+        <div class="kpi-card reveal-scale">
+          <div class="kpi-label">Riscos Pendentes</div>
+          <div class="kpi-value red">12</div>
+          <div class="kpi-sub">A&ccedil;&otilde;es requeridas</div>
         </div>
       </div>
-    </section>
 
-    <!-- WHY CHOOSE -->
-    <section class="why section" id="why">
-      <div class="container">
-        <div class="why-header">
-          <h2 class="why-title anim-in">Por que gestores<br>escolhem a <span class="gradient-text">GRIX</span></h2>
-          <p class="why-sub anim-in">Não é mais uma ferramenta de analytics. É blindagem regulatória demonstrável.</p>
-        </div>
-        <div class="why-grid">
-          <div class="why-card anim-in"><div class="why-card-num">01</div><h3>Explica, não<br>reporta</h3><p>Não mostramos métricas — explicamos causas e consequências. Parecer em uma página, não relatório de 40 slides.</p></div>
-          <div class="why-card anim-in"><div class="why-card-num">02</div><h3>Ex-cliente<br>no comando</h3><p>Nosso founder é CISO em exercício no Ministério Público. Ele já viveu a sua cadeira e fala a linguagem de quem assina.</p></div>
-          <div class="why-card anim-in"><div class="why-card-num">03</div><div class="why-badge"><div class="laurel">🛡️</div><div class="badge-title">ISO 27001<br>27701 · 37001</div><p>Certificações próprias em Segurança, Privacidade e Antissuborno</p></div></div>
-        </div>
-      </div>
-    </section>
+      <!-- Charts -->
+      <div class="dashboard-charts">
+        <!-- Risk Matrix -->
+        <div class="chart-card reveal">
+          <h4>Matriz de Risco Regulat&oacute;rio</h4>
+          <div class="risk-matrix">
+            <div class="y-label">5</div>
+            <div class="risk-cell risk-med">1</div>
+            <div class="risk-cell risk-high">2</div>
+            <div class="risk-cell risk-crit">3</div>
+            <div class="risk-cell risk-crit">2</div>
+            <div class="risk-cell risk-crit">1</div>
 
-    <!-- CTA FOUNDER -->
-    <section class="cta-section section" id="contact">
-      <div class="container">
-        <div class="cta-inner">
-          <div class="cta-photo anim-in" role="img" aria-label="Lucien Rocha, Founder e CISO da GRIX"></div>
-          <div class="cta-content">
-            <h2 class="anim-in">Vamos blindar<br>sua gestão<br>juntos. <span class="hero-gear" style="font-size:0.45em">⚙</span></h2>
-            <div class="cta-meta anim-in"><div class="cta-name">Lucien Rocha</div><div class="cta-role">Founder & CISO, GRIX</div></div>
-            <p class="cta-quote anim-in">"Vou pessoalmente revisar seus dados e mostrar onde o risco está escondido."</p>
-            <div class="cta-buttons anim-in">
-              <div class="hero-cta-group"><a href="#" class="btn btn-primary">Agendar diagnóstico</a><button class="btn-icon" aria-label="Agendar"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
-              <a href="#how" class="btn btn-outline">Como funciona</a>
+            <div class="y-label">4</div>
+            <div class="risk-cell risk-low">0</div>
+            <div class="risk-cell risk-med">2</div>
+            <div class="risk-cell risk-high">1</div>
+            <div class="risk-cell risk-crit">2</div>
+            <div class="risk-cell risk-crit">0</div>
+
+            <div class="y-label">3</div>
+            <div class="risk-cell risk-low">1</div>
+            <div class="risk-cell risk-med">3</div>
+            <div class="risk-cell risk-med">1</div>
+            <div class="risk-cell risk-high">1</div>
+            <div class="risk-cell risk-high">0</div>
+
+            <div class="y-label">2</div>
+            <div class="risk-cell risk-low">2</div>
+            <div class="risk-cell risk-low">1</div>
+            <div class="risk-cell risk-med">0</div>
+            <div class="risk-cell risk-med">1</div>
+            <div class="risk-cell risk-high">0</div>
+
+            <div class="y-label">1</div>
+            <div class="risk-cell risk-low">0</div>
+            <div class="risk-cell risk-low">1</div>
+            <div class="risk-cell risk-low">0</div>
+            <div class="risk-cell risk-med">0</div>
+            <div class="risk-cell risk-med">0</div>
+
+            <div></div>
+            <div class="x-label">1</div>
+            <div class="x-label">2</div>
+            <div class="x-label">3</div>
+            <div class="x-label">4</div>
+            <div class="x-label">5</div>
+          </div>
+        </div>
+
+        <!-- Bar Chart - Aderencia por Categoria -->
+        <div class="chart-card reveal">
+          <h4>Ader&ecirc;ncia por Categoria</h4>
+          <div class="bar-chart">
+            <div class="bar-row">
+              <span class="bar-label">Governan&ccedil;a</span>
+              <div class="bar-track"><div class="bar-fill" style="width:92%">92%</div></div>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Seguran&ccedil;a</span>
+              <div class="bar-track"><div class="bar-fill" style="width:88%">88%</div></div>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Privacidade</span>
+              <div class="bar-track"><div class="bar-fill" style="width:94%">94%</div></div>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Compliance</span>
+              <div class="bar-track"><div class="bar-fill" style="width:85%">85%</div></div>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Opera&ccedil;&otilde;es</span>
+              <div class="bar-track"><div class="bar-fill" style="width:78%">78%</div></div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
 
-  <!-- FOOTER -->
+        <!-- Data Grid - Classificacao de Dados -->
+        <div class="chart-card reveal">
+          <h4>Classifica&ccedil;&atilde;o de Dados</h4>
+          <div class="data-grid">
+            <div class="data-cell">
+              <div class="type">Pessoais</div>
+              <div class="count" style="color:#A87AFF">1.247</div>
+              <div class="status mapped">&#x2713; Mapeados</div>
+            </div>
+            <div class="data-cell">
+              <div class="type">Sens&iacute;veis</div>
+              <div class="count" style="color:#F87171">342</div>
+              <div class="status partial">&#x25CB; Parcial</div>
+            </div>
+            <div class="data-cell">
+              <div class="type">Financeiros</div>
+              <div class="count" style="color:#FBBF24">589</div>
+              <div class="status mapped">&#x2713; Mapeados</div>
+            </div>
+            <div class="data-cell">
+              <div class="type">Sa&uacute;de</div>
+              <div class="count" style="color:#F87171">156</div>
+              <div class="status pending">&#x25CF; Pendente</div>
+            </div>
+            <div class="data-cell">
+              <div class="type">Biom&eacute;tricos</div>
+              <div class="count" style="color:#34D399">78</div>
+              <div class="status mapped">&#x2713; Mapeados</div>
+            </div>
+            <div class="data-cell">
+              <div class="type">Crian&ccedil;as</div>
+              <div class="count" style="color:#FBBF24">23</div>
+              <div class="status partial">&#x25CB; Parcial</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Donut + Line chart -->
+        <div class="chart-card reveal">
+          <h4>Impacto &agrave; Privacidade</h4>
+          <div class="donut-wrap">
+            <div class="donut"></div>
+            <div class="donut-legend">
+              <div class="legend-item"><span class="legend-dot" style="background:#34D399"></span> Baixo (38%)</div>
+              <div class="legend-item"><span class="legend-dot" style="background:#FBBF24"></span> M&eacute;dio (24%)</div>
+              <div class="legend-item"><span class="legend-dot" style="background:var(--color-primary)"></span> Alto (23%)</div>
+              <div class="legend-item"><span class="legend-dot" style="background:#F87171"></span> Cr&iacute;tico (15%)</div>
+            </div>
+          </div>
+          <h4 style="margin-top:24px;">Avalia&ccedil;&atilde;o de Impacto (Mensal)</h4>
+          <div class="line-chart-wrap">
+            <div class="line-bar" style="height:45%" data-label="Jan"></div>
+            <div class="line-bar" style="height:52%" data-label="Fev"></div>
+            <div class="line-bar" style="height:48%" data-label="Mar"></div>
+            <div class="line-bar" style="height:65%" data-label="Abr"></div>
+            <div class="line-bar" style="height:72%" data-label="Mai"></div>
+            <div class="line-bar" style="height:68%" data-label="Jun"></div>
+            <div class="line-bar" style="height:78%" data-label="Jul"></div>
+            <div class="line-bar" style="height:82%" data-label="Ago"></div>
+            <div class="line-bar" style="height:88%" data-label="Set"></div>
+            <div class="line-bar" style="height:91%" data-label="Out"></div>
+            <div class="line-bar" style="height:94%" data-label="Nov"></div>
+            <div class="line-bar" style="height:96%" data-label="Dez"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ USE CASES ============ -->
+  <section class="use-cases" id="solucoes">
+    <div class="container">
+      <div class="use-cases-header">
+        <p class="section-label reveal">Solu&ccedil;&otilde;es</p>
+        <h2 class="section-title reveal">Solu&ccedil;&otilde;es para quem decide<br>sob press&atilde;o</h2>
+      </div>
+    </div>
+    <div class="use-cases-track" style="padding-left: max(24px, calc((100vw - 1200px)/2 + 24px));">
+      <!-- Card 1: Governanca de Dados -->
+      <div class="uc-card reveal-scale">
+        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f2?w=520&h=325&fit=crop" alt="Governanca de Dados" class="uc-card-img" loading="lazy">
+        <div class="uc-card-body">
+          <h3>Governan&ccedil;a de Dados</h3>
+          <p>Classifica&ccedil;&atilde;o, mapeamento e controle de dados pessoais e sens&iacute;veis em conformidade com LGPD e normas setoriais.</p>
+          <a href="#" class="uc-link">Saiba mais &rarr;</a>
+        </div>
+      </div>
+      <!-- Card 2: MDR com IA 24x7 -->
+      <div class="uc-card reveal-scale">
+        <img src="assets/uc-soc.png" alt="MDR com IA 24x7" class="uc-card-img" loading="lazy">
+        <div class="uc-card-body">
+          <h3>MDR com IA 24x7</h3>
+          <p>Monitoramento cont&iacute;nuo com detec&ccedil;&atilde;o e resposta gerenciada. SOC dedicado com analistas e IA explic&aacute;vel.</p>
+          <a href="#" class="uc-link">Saiba mais &rarr;</a>
+        </div>
+      </div>
+      <!-- Card 3: Conformidade Regulatoria (FEATURED) -->
+      <div class="uc-card featured reveal-scale">
+        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=520&h=325&fit=crop" alt="Conformidade Regulatoria" class="uc-card-img" loading="lazy">
+        <div class="uc-card-body">
+          <h3>Conformidade Regulat&oacute;ria</h3>
+          <p>ISO 27001, 27701, 37001, LGPD, Marco Civil. Implementa&ccedil;&atilde;o e manuten&ccedil;&atilde;o cont&iacute;nua com metodologia em 90 dias.</p>
+          <a href="#" class="uc-link">Saiba mais &rarr;</a>
+        </div>
+      </div>
+      <!-- Card 4: CISO como Servico -->
+      <div class="uc-card reveal-scale">
+        <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=520&h=325&fit=crop" alt="CISO como Servico" class="uc-card-img" loading="lazy">
+        <div class="uc-card-body">
+          <h3>CISO como Servi&ccedil;o</h3>
+          <p>Lideran&ccedil;a executiva em ciberseguran&ccedil;a sem o custo de um C-level. Estrat&eacute;gia, governan&ccedil;a e reporte ao board.</p>
+          <a href="#" class="uc-link">Saiba mais &rarr;</a>
+        </div>
+      </div>
+      <!-- Card 5: DPO como Servico -->
+      <div class="uc-card reveal-scale">
+        <img src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=520&h=325&fit=crop" alt="DPO como Servico" class="uc-card-img" loading="lazy">
+        <div class="uc-card-body">
+          <h3>DPO como Servi&ccedil;o</h3>
+          <p>Encarregado de dados dedicado com experi&ecirc;ncia regulat&oacute;ria. Gest&atilde;o de direitos dos titulares e rela&ccedil;&atilde;o com a ANPD.</p>
+          <a href="#" class="uc-link">Saiba mais &rarr;</a>
+        </div>
+      </div>
+      <!-- Spacer for scroll padding -->
+      <div style="min-width:24px;flex-shrink:0;"></div>
+    </div>
+  </section>
+
+  <!-- ============ WHY CHOOSE ============ -->
+  <section class="why-choose">
+    <div class="container">
+      <div class="why-header">
+        <p class="section-label reveal">Diferencial</p>
+        <h2 class="section-title reveal">Por que gestores escolhem<br>a GRIX</h2>
+      </div>
+      <div class="why-grid">
+        <!-- Card 1 -->
+        <div class="why-card accent-left reveal">
+          <div class="card-num">01</div>
+          <h3>Explica, n&atilde;o reporta</h3>
+          <p>Cada recomenda&ccedil;&atilde;o vem com o racioc&iacute;nio da IA. Sem caixa-preta, sem jarg&atilde;o. Voc&ecirc; entende o porqu&ecirc; de cada a&ccedil;&atilde;o.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="why-card reveal">
+          <div class="card-num">02</div>
+          <h3>Ex-cliente no comando</h3>
+          <ul class="feature-list">
+            <li><span class="dot"></span> Confidence-aware AI</li>
+            <li><span class="dot"></span> Real-time reasoning</li>
+            <li><span class="dot"></span> Built for action</li>
+          </ul>
+        </div>
+        <!-- Card 3: Award -->
+        <div class="why-card award-card reveal">
+          <div class="award-badge">&#x1f3c6;</div>
+          <h3>Tripla Certifica&ccedil;&atilde;o ISO</h3>
+          <p>ISO 27001, 27701 e 37001. Auditados anualmente por certificadora independente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA / FOUNDER ============ -->
+  <section class="founder-cta" id="contato">
+    <div class="container">
+      <div class="founder-grid">
+        <div class="founder-photo-wrap reveal-left">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=800&fit=crop&crop=face&auto=format&q=80" alt="Lucien Rocha, Founder" class="founder-photo" loading="lazy">
+        </div>
+        <div class="founder-info">
+          <h2 class="reveal">Vamos blindar sua<br>gest&atilde;o juntos.</h2>
+          <div class="founder-meta reveal">
+            <div class="founder-name">Lucien Rocha</div>
+            <div class="founder-role">Founder &amp; CISO</div>
+          </div>
+          <blockquote class="founder-quote reveal">
+            &ldquo;Proteger a decis&atilde;o &eacute; proteger quem decide. Cada gestor merece saber exatamente onde est&atilde;o seus riscos &mdash; e o que fazer com eles.&rdquo;
+          </blockquote>
+          <div class="founder-ctas reveal">
+            <a href="#" class="btn-primary">Diagn&oacute;stico executivo</a>
+            <a href="#" class="btn-outline">Falar com especialista</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="#" class="nav-logo"><span class="nav-logo-icon">🛡️</span> GRIX</a>
-          <div class="footer-legal"><span>© 2025 Grix. Todos os direitos reservados.</span><a href="#">Política de Privacidade</a><a href="#">Termos de Uso</a></div>
-        </div>
-        <div class="footer-col"><h4>Produto</h4><ul><li><a href="#">Governança de Dados</a></li><li><a href="#">MDR 24x7</a></li><li><a href="#">Conformidade</a></li><li><a href="#">CISO como Serviço</a></li><li><a href="#">DPO como Serviço</a></li></ul></div>
-        <div class="footer-col"><h4>Empresa</h4><ul><li><a href="#">Sobre</a></li><li><a href="#">Carreiras</a></li><li><a href="#">Imprensa</a></li></ul></div>
-        <div class="footer-col"><h4>Recursos</h4><ul><li><a href="#">Blog</a></li><li><a href="#">Documentação</a></li><li><a href="#">Central de Ajuda</a></li><li><a href="#">Cases</a></li></ul></div>
-        <div class="footer-actions">
-          <div class="nav-social">
-            <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.3-1.9.5-3.8.5-5.8s-.2-3.9-.5-5.8zM9.6 15.6V8.4L15.8 12l-6.2 3.6z"/></svg></a>
-            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 2 .2 2.5.4a4.2 4.2 0 0 1 2 2c.2.5.3 1.3.4 2.5.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 2-.4 2.5a4.2 4.2 0 0 1-2 2c-.5.2-1.3.3-2.5.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-2-.2-2.5-.4a4.2 4.2 0 0 1-2-2c-.2-.5-.3-1.3-.4-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-2 .4-2.5a4.2 4.2 0 0 1 2-2c.5-.2 1.3-.3 2.5-.4C8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 5.8.1 4.9.3 4.1.6a6.4 6.4 0 0 0-2.3 1.5A6.4 6.4 0 0 0 .3 4.4C.1 5.2 0 6.1 0 7.4 0 8.6 0 9 0 12.3s0 3.7.1 4.9c0 1.3.2 2.2.5 3a6.4 6.4 0 0 0 1.5 2.3 6.4 6.4 0 0 0 2.3 1.5c.8.3 1.7.4 3 .5 1.2 0 1.6.1 4.9.1s3.7 0 4.9-.1c1.3 0 2.2-.2 3-.5a6.4 6.4 0 0 0 2.3-1.5 6.4 6.4 0 0 0 1.5-2.3c.3-.8.4-1.7.5-3 0-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c0-1.3-.2-2.2-.5-3a6.4 6.4 0 0 0-1.5-2.3A6.4 6.4 0 0 0 19.6.3C18.8.1 17.9 0 16.6 0 15.4 0 15 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-10.4a1.4 1.4 0 1 0 0-2.8 1.4 1.4 0 0 0 0 2.8z"/></svg></a>
+          <div class="nav-logo">
+            <span class="shield">&#x1f6e1;&#xfe0f;</span> GRIX
           </div>
-          <a href="#contact" class="btn btn-outline" style="font-size:0.78rem; padding:0.5rem 1.2rem;">Agendar diagnóstico</a>
+          <p>Ciberseguran&ccedil;a, Governan&ccedil;a e Compliance para gestores que respondem pelo pr&oacute;prio CPF.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Produto</h4>
+          <ul>
+            <li><a href="#">Plataforma</a></li>
+            <li><a href="#">IA Explic&aacute;vel</a></li>
+            <li><a href="#">Integ&ccedil;&otilde;es</a></li>
+            <li><a href="#">Pre&ccedil;os</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="#">Sobre n&oacute;s</a></li>
+            <li><a href="#">Carreiras</a></li>
+            <li><a href="#">Parceiros</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Recursos</h4>
+          <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Whitepapers</a></li>
+            <li><a href="#">Casos de uso</a></li>
+            <li><a href="#">Documenta&ccedil;&atilde;o</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">&copy; 2025 Grix. Todos os direitos reservados.</span>
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Twitter">&#x1d54f;</a>
+          <a href="#" aria-label="Instagram">&#x25cb;</a>
+          <a href="#contato" class="footer-cta-btn">Agendar diagn&oacute;stico</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- ============ SCRIPTS ============ -->
   <script>
-    // Mobile nav
-    const toggle = document.getElementById('navToggle'), menu = document.getElementById('navMenu');
-    toggle.addEventListener('click', () => { toggle.classList.toggle('active'); menu.classList.toggle('open'); });
-    document.querySelectorAll('.nav-links a').forEach(l => l.addEventListener('click', () => { toggle.classList.remove('active'); menu.classList.remove('open'); }));
+    (function() {
+      'use strict';
 
-    // Nav scroll
-    window.addEventListener('scroll', () => document.getElementById('nav').classList.toggle('scrolled', scrollY > 60));
+      /* ---- Navbar scroll ---- */
+      var navbar = document.getElementById('navbar');
+      var lastScroll = 0;
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 40) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      }, { passive: true });
 
-    // GSAP (wrapped in try-catch in case CDN fails on file://)
-    try {
-    gsap.registerPlugin(ScrollTrigger);
-    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-
-      // Hero entrance
-      const h = gsap.timeline({ defaults: { duration: 1.1, ease: 'power3.out' } });
-      h.from('.hero-badge', { x: -50, opacity: 0, duration: 1.3 })
-       .from('.hero-title', { y: 45, opacity: 0 }, '-=0.8')
-       .from('.hero-sub', { y: 30, opacity: 0 }, '-=0.65')
-       .from('.hero-ctas', { y: 20, opacity: 0 }, '-=0.55')
-       .from('.hero-trust', { y: 15, opacity: 0 }, '-=0.45');
-
-      // Sections reveal
-      gsap.utils.toArray('section:not(.hero)').forEach(s => {
-        const items = s.querySelectorAll('.anim-in');
-        if (items.length) gsap.from(items, {
-          scrollTrigger: { trigger: s, start: 'top 82%', toggleActions: 'play none none none' },
-          y: 45, opacity: 0, duration: 0.75, stagger: 0.1, ease: 'power2.out'
+      /* ---- Mobile menu ---- */
+      var hamburger = document.getElementById('hamburger');
+      var mobileMenu = document.getElementById('mobileMenu');
+      hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('open');
+        mobileMenu.classList.toggle('open');
+        document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+      });
+      document.querySelectorAll('[data-mobile-nav]').forEach(function(link) {
+        link.addEventListener('click', function() {
+          hamburger.classList.remove('open');
+          mobileMenu.classList.remove('open');
+          document.body.style.overflow = '';
         });
       });
 
-      // Step numbers
-      gsap.utils.toArray('.how-step-num').forEach(n => {
-        gsap.from(n, {
-          scrollTrigger: { trigger: n, start: 'top 88%' },
-          scale: 0.4, opacity: 0, duration: 0.55, ease: 'back.out(2)'
+      /* ---- Active nav link highlight ---- */
+      var sections = document.querySelectorAll('section[id]');
+      var navLinks = document.querySelectorAll('[data-nav]');
+      function updateActiveNav() {
+        var scrollY = window.scrollY + 120;
+        sections.forEach(function(section) {
+          var top = section.offsetTop;
+          var height = section.offsetHeight;
+          var id = section.getAttribute('id');
+          if (scrollY >= top && scrollY < top + height) {
+            navLinks.forEach(function(link) {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === '#' + id) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      }
+      window.addEventListener('scroll', updateActiveNav, { passive: true });
+      updateActiveNav();
+
+      /* ---- Smooth scroll for anchor links ---- */
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+          var targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          var target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
         });
       });
 
-      // Case cards
-      gsap.from('.case-card', {
-        scrollTrigger: { trigger: '.cases-grid', start: 'top 82%' },
-        x: 50, opacity: 0, duration: 0.65, stagger: 0.08, ease: 'power2.out'
-      });
+      /* ---- GSAP Animations ---- */
+      try {
+        var gsapScript = document.createElement('script');
+        gsapScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js';
+        gsapScript.onload = function() {
+          var stScript = document.createElement('script');
+          stScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js';
+          stScript.onload = initGSAP;
+          document.head.appendChild(stScript);
+        };
+        gsapScript.onerror = fallbackReveal;
+        document.head.appendChild(gsapScript);
+      } catch(e) {
+        fallbackReveal();
+      }
 
-      // Why cards
-      gsap.from('.why-card', {
-        scrollTrigger: { trigger: '.why-grid', start: 'top 82%' },
-        y: 35, opacity: 0, duration: 0.65, stagger: 0.12, ease: 'power2.out'
-      });
+      function fallbackReveal() {
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(function(el) {
+          el.style.opacity = '1';
+          el.style.transform = 'none';
+        });
+      }
 
-      // Founder parallax
-      gsap.to('.cta-photo', {
-        scrollTrigger: { trigger: '.cta-section', start: 'top bottom', end: 'bottom top', scrub: 1.2 },
-        y: -35, ease: 'none'
-      });
+      function initGSAP() {
+        try {
+          gsap.registerPlugin(ScrollTrigger);
 
-      // Dashboard reveal
-      gsap.from('.dash', {
-        scrollTrigger: { trigger: '.platform', start: 'top 80%' },
-        y: 60, opacity: 0, scale: 0.95, duration: 1, ease: 'power3.out'
-      });
-      gsap.from('.dash-card', {
-        scrollTrigger: { trigger: '.dash-grid', start: 'top 85%' },
-        y: 30, opacity: 0, duration: 0.6, stagger: 0.08, ease: 'power2.out'
-      });
+          var ease = 'expo.out';
+          var duration = 1;
 
-      // Glow parallax
-      gsap.to('.hero-glow', {
-        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1 },
-        y: 180, scale: 1.2, ease: 'none'
-      });
-    }
+          // Reveal animations
+          gsap.utils.toArray('.reveal').forEach(function(el, i) {
+            gsap.to(el, {
+              opacity: 1,
+              y: 0,
+              duration: duration,
+              ease: ease,
+              scrollTrigger: {
+                trigger: el,
+                start: 'top 88%',
+                once: true
+              },
+              delay: i % 4 * 0.08
+            });
+          });
 
-    } catch(e) { console.warn('GSAP not loaded:', e); }
+          gsap.utils.toArray('.reveal-left').forEach(function(el) {
+            gsap.to(el, {
+              opacity: 1,
+              x: 0,
+              duration: duration,
+              ease: ease,
+              scrollTrigger: {
+                trigger: el,
+                start: 'top 88%',
+                once: true
+              }
+            });
+          });
 
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const t = document.querySelector(a.getAttribute('href'));
-        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-      });
-    });
+          gsap.utils.toArray('.reveal-right').forEach(function(el) {
+            gsap.to(el, {
+              opacity: 1,
+              x: 0,
+              duration: duration,
+              ease: ease,
+              scrollTrigger: {
+                trigger: el,
+                start: 'top 88%',
+                once: true
+              }
+            });
+          });
 
-    // Active nav
-    const secs = document.querySelectorAll('section[id]'), links = document.querySelectorAll('.nav-links a');
-    window.addEventListener('scroll', () => {
-      let c = '';
-      secs.forEach(s => { if (scrollY >= s.offsetTop - 200) c = s.id; });
-      links.forEach(l => { l.classList.toggle('active', l.getAttribute('href') === '#' + c); });
-    });
+          gsap.utils.toArray('.reveal-scale').forEach(function(el, i) {
+            gsap.to(el, {
+              opacity: 1,
+              scale: 1,
+              duration: 0.8,
+              ease: ease,
+              scrollTrigger: {
+                trigger: el,
+                start: 'top 90%',
+                once: true
+              },
+              delay: i % 5 * 0.1
+            });
+          });
+
+          // Bar chart animation
+          gsap.utils.toArray('.bar-fill').forEach(function(bar) {
+            var w = bar.style.width;
+            bar.style.width = '0%';
+            gsap.to(bar, {
+              width: w,
+              duration: 1.2,
+              ease: ease,
+              scrollTrigger: {
+                trigger: bar,
+                start: 'top 90%',
+                once: true
+              }
+            });
+          });
+
+          // Line chart bars animation
+          gsap.utils.toArray('.line-bar').forEach(function(bar, i) {
+            var h = bar.style.height;
+            bar.style.height = '0%';
+            gsap.to(bar, {
+              height: h,
+              duration: 0.8,
+              ease: ease,
+              scrollTrigger: {
+                trigger: bar.parentElement,
+                start: 'top 90%',
+                once: true
+              },
+              delay: i * 0.06
+            });
+          });
+
+          // KPI counter animation
+          gsap.utils.toArray('.kpi-value').forEach(function(el) {
+            var text = el.textContent;
+            var num = parseInt(text);
+            var suffix = text.replace(/[0-9]/g, '');
+            if (!isNaN(num)) {
+              var obj = { val: 0 };
+              gsap.to(obj, {
+                val: num,
+                duration: 1.5,
+                ease: 'power2.out',
+                scrollTrigger: {
+                  trigger: el,
+                  start: 'top 90%',
+                  once: true
+                },
+                onUpdate: function() {
+                  el.textContent = Math.round(obj.val) + suffix;
+                }
+              });
+            }
+          });
+
+        } catch(e) {
+          fallbackReveal();
+        }
+      }
+
+    })();
   </script>
 </body>
 </html>
